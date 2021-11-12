@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="../css/file.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">3S Home</a>
+        </div>
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="../html/home.html">Home</a></li>
+          <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#"
+              >HoChiMinh <span class="caret"></span
+            ></a>
+            <ul class="dropdown-menu">
+              <li><a href="#">District 1</a></li>
+              <li><a href="#">District 2</a></li>
+              <li><a href="#">District 3</a></li>
+              <li><a href="#">District 4</a></li>
+              <li><a href="#">District 5</a></li>
+              <li><a href="#">District 6</a></li>
+              <li><a href="#">District 7</a></li>
+              <li><a href="#">District 8</a></li>
+              <li><a href="#">District 9</a></li>
+              <li><a href="#">District 10</a></li>
+              <li><a href="#">District 11</a></li>
+              <li><a href="#">District 12</a></li>
+              <li><a href="#">BinhTan District</a></li>
+              <li><a href="#">BinhThanh District</a></li>
+              <li><a href="#">GoVap District</a></li>
+              <li><a href="#">PhuNhuan District</a></li>
+              <li><a href="#">TanBinh District</a></li>
+              <li><a href="#">TanPhu District</a></li>
+              <li><a href="#">ThuDuc District</a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#"
+              >HaNoi <span class="caret"></span
+            ></a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Ba Dinh</a></li>
+              <li><a href="#">Bac Tu Liem</a></li>
+              <li><a href="#">Cau Giay</a></li>
+              <li><a href="#">Ha Dong</a></li>
+              <li><a href="#">Hai Ba Trung</a></li>
+              <li><a href="#">Hoan Kiem</a></li>
+              <li><a href="#">Hoang Mai</a></li>
+              <li><a href="#">Long Bien</a></li>
+              <li><a href="#">Nam Tu Lien</a></li>
+              <li><a href="#">Tay Ho </a></li>
+              <li><a href="#">Thanh Xuan</a></li>
+              <li><a href="#">Dong Da</a></li>
+              <li><a href="#">Chuong My</a></li>
+              <li><a href="#">Gia Lam</a></li>
+              <li><a href="#">Hoai Duc</a></li>
+              <li><a href="#">Me Linh</a></li>
+              <li><a href="#">Soc Son</a></li>
+              <li><a href="#">Thanh Tri</a></li>
+              <li><a href="#">Thuong Tin</a></li>
+              <li><a href="#">Dan Phuong</a></li>
+              <li><a href="#">Dong Anh</a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#"
+              >DaNang <span class="caret"></span
+            ></a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Lien Chieu</a></li>
+              <li><a href="#">Thanh Khe</a></li>
+              <li><a href="#">Hai Chau</a></li>
+              <li><a href="#">Son Tra</a></li>
+              <li><a href="#">Ngu Hanh Son</a></li>
+              <li><a href="#">Cam Le</a></li>
+              <li><a href="#">Hoa Vang</a></li>
+            </ul>
+          </li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <a href="#" data-toggle="modal" data-target="#SignUpModal"
+              ><span class="glyphicon glyphicon-user"></span> Sign Up</a
+            >
+
+            <!-- Modal -->
+            <div class="modal fade" id="SignUpModal" role="dialog">
+              <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Sign Up</h5>
+                    <button
+                      type="button"
+                      class="close"
+                      data-dismiss="modal"
+                      aria-label="Close"
+                    >
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <form>
+                      <div class="form-group">
+                        <label for="recipient-name" class="col-form-label"
+                          >Account name:</label
+                        >
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="recipient-name"
+                        />
+                      </div>
+                      <div class="form-group">
+                        <label for="message-text" class="col-form-label"
+                          >Password:</label
+                        >
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="recipient-name"
+                        />
+                      </div>
+                      <div class="form-group">
+                        <label for="recipient-name" class="col-form-label"
+                          >Confirm Password:</label
+                        >
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="recipient-name"
+                        />
+                      </div>
+                    </form>
+                  </div>
+                  <div class="modal-footer">
+                    <button
+                      type="button"
+                      class="btn btn-secondary"
+                      data-dismiss="modal"
+                    >
+                      Close
+                    </button>
+                    <button type="button" class="btn btn-primary">Sign Up</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <li>
+            <a href="#" data-toggle="modal" data-target="#LoginModal"
+              ><span class="glyphicon glyphicon-log-in"></span> login</a
+            >
+
+            <!-- Modal -->
+            <div class="modal fade" id="LoginModal" role="dialog">
+              <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button
+                      type="button"
+                      class="close"
+                      data-dismiss="modal"
+                      aria-label="Close"
+                    >
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <form>
+                      <div class="form-group">
+                        <label for="recipient-name" class="col-form-label"
+                          >Account name:</label
+                        >
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="recipient-name"
+                        />
+                      </div>
+                      <div class="form-group">
+                        <label for="message-text" class="col-form-label"
+                          >Password:</label
+                        >
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="recipient-name"
+                        />
+                      </div>
+                    </form>
+                  </div>
+                  <div class="modal-footer">
+                    <button
+                      type="button"
+                      class="btn btn-secondary"
+                      data-dismiss="modal"
+                    >
+                      Close
+                    </button>
+                    <a class="btn btn-primary" href="landlord.html">Login</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="container">
+      <div class="row" style="display: flex">
+        <div>
+          <img
+            src="../image/hcm.png"
+            alt="HoChiMinh"
+            style="width: 400px; height: 200px; margin-right: 15px"
+          />
+        </div>
+        <div>
+          <img
+            src="../image/danang.png"
+            alt="HoChiMinh"
+            style="
+              width: 400px;
+              height: 200px;
+              margin-left: 15px;
+              margin-right: 15px;
+            "
+          />
+        </div>
+        <div>
+          <img
+            src="../image/hanoi.png"
+            alt="HoChiMinh"
+            style="
+              width: 400px;
+              height: 200px;
+              margin-left: 15px;
+              margin-right: 15px;
+            "
+          />
+        </div>
+      </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  </body>
+</html>
