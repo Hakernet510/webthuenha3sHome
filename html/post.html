@@ -91,12 +91,13 @@
 
           <h2 class="postting">Postting</h2>
           
-          <form onsubmit="submit(e)">
-          <div class="dropdown">
+          <form class="form1" onsubmit="submit(e)">
+            <div class="drop">
+            <div class="dropdown">
             <p>
               Tỉnh/Thành phố
             </p>
-            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">City
+            <button class="btn btn-primary dropdown-toggle City" type="button" data-toggle="dropdown">City
             <span class="caret"></span></button>
             <ul class="dropdown-menu">
               <li><a href="#">HoChiMinh</a></li>
@@ -109,7 +110,7 @@
             <p>
               Quận/Huyện
             </p>
-            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">District
+            <button class="btn btn-primary dropdown-toggle District" type="button" data-toggle="dropdown">District
             <span class="caret"></span></button>
             <ul class="dropdown-menu">
               <li><a href="#">District 1</a></li>
@@ -138,7 +139,7 @@
             <p>
               Phường/Xã
             </p>
-            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Wards
+            <button class="btn btn-primary dropdown-toggle Wards" type="button" data-toggle="dropdown">Wards
             <span class="caret"></span></button>
             <ul class="dropdown-menu">
               <li><a href="#">1</a></li>
@@ -154,7 +155,7 @@
             <p>
               Đường/Phố
             </p>
-            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Street
+            <button class="btn btn-primary dropdown-toggle Street" type="button" data-toggle="dropdown">Street
             <span class="caret"></span></button>
             <ul class="dropdown-menu">
               <li><a href="#">hương lộ 2</a></li>
@@ -163,15 +164,17 @@
               <li><a href="#">lê văn quới</a></li>
             </ul>
           </div>
-          <button type="submit">
+        </div>
+          <!-- <button type="submit">
             submit
-          </button>
-        </form>
+          </button> -->
+        
 
         <h2>
           Thông tin mô tả
         </h2>
-
+        
+        <div class="categories">
         <p>
           Loại chuyên mục
         </p>
@@ -184,31 +187,32 @@
             <li><a href="#">Ở ghép</a></li>
           </ul>
         </div>
+      </div>
 
-        <div class="form-group">
+        <div class="form-group title">
           <label for="usr">Tiêu đề</label>
-          <input type="text" class="form-control" id="usr">
+          <input class="input" type="text" class="form-control" id="usr">
         </div>
         <div class="form-group">
           <label for="pwd">Nội Dung Mô Tả</label>
-          <textarea class="form-control" rows="5" id="comment"></textarea>
+          <textarea class="form-control textarea" rows="5" id="comment"></textarea>
         </div>
 
         <div class="form-group">
           <label for="usr">Thông tin liên hệ</label>
-          <input type="text" class="form-control" id="usr">
+          <input class="input" type="text" class="form-control" id="usr">
         </div>
 
         <div class="form-group">
           <label for="usr">Giá cho thuê</label>
           <span></span>
-          <input type="text" class="form-control" id="usr">
+          <input class="input" type="text" class="form-control" id="usr">
         </div>
 
         <div class="form-group">
           <label for="usr">Diện tích</label>
           <span></span>
-          <input type="text" class="form-control" id="usr">
+          <input class="input" type="text" class="form-control" id="usr">
         </div>
 
         
@@ -224,11 +228,16 @@
           </ul>
         </div>
 
-        <h2>Hình ảnh</h2>
+        <div class="img">
+          <h2>Hình ảnh</h2>
 
-        <input type="file" name="" id="">
+          <div class="img-file">
+            <input type="file" name="" id="">
+          </div>
 
-        
+        </div>
+
+      </form>
 
 
           <!-- <div class="alert alert-success">

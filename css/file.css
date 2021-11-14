@@ -6,11 +6,79 @@
     background-color: #F5F5F5;
 }
 
-form{
+.form{
     position: relative;
     width: 100%;
     height: auto;
-    background: #000;
+    background: #F5F5F5;
     display: flex;
 }
 
+.City{
+    width: 223px;
+    height: 30px;
+}
+
+.District{
+    width: 223px;
+    height: 30px;
+}
+
+.Wards{
+    width: 223px;
+    height: 30px;
+}
+
+.Street{
+    width: 223px;
+    height: 30px;
+}
+
+.input{
+    width: 991px;
+    height: 34px;
+}
+
+.textarea{
+    width: 991px;
+}
+
+.form1{
+    position: relative;
+    width: 1021px;
+    height: 1100px;
+    /* background: #F5F5F5; */
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+}
+
+.categories{
+    width: 480px;
+    height: 70px;
+    position: relative;
+    margin: 5em 0 0 0;
+    left: -14.5em;
+    /* top: 5em ; */
+}
+
+.img{
+    width: 991px;
+    height: 181px;
+    position: relative;
+}
+
+.img-file{
+    border: 1px dashed #000;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background: #000; */
+}
+
+.drop{
+    display: flex;
+    flex-wrap: wrap;
+}
