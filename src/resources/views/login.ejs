@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="../css/file.css" />
+    <link rel="stylesheet" href="../css/login.css " />
+  </head>
+  <body>
+    <div class="login">
+      <div class="center">
+        <h1>3sHome</h1>
+        <h1 id="loginResponse" style="font-size: 16px; border-bottom: none;"></h1>
+        <form id="formLogin" method="post">
+          <div class="field">
+            <input type="text" name="username" required />
+            <span></span>
+            <label>Username</label>
+          </div>
+          <div class="field">
+            <input type="password" name="password" required />
+            <span></span>
+            <label>Password</label>
+          </div>
+          <div class="pass">Forgot Password</div>
+          <input type="submit" value="Login" />
+          <div class="signup_link">Not a member? <a href="">Signup</a></div>
+        </form>
+      </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="../js/login.js"></script>
+  </body>
+</html>
