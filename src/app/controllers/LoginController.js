@@ -3,26 +3,48 @@ const { db } = require("../../connect");
 const loginController = async (req, res) => {
   console.log("req là: ", req.body);
 
-  const result = await getLandlords();
+  //check input
+  const resInput = await checkInput(req.body);
+  if (!resInput) return res.json({ message: "fail" });
 
+  //check database
+  const resDB = await checkDB(req.body);
+  if (resDB.length === 0) return res.json({ message: "fail" });
+
+  //main
+
+  //res
   res.json({
     message: "success",
-    result,
+    // result,
+    resDB,
   });
 };
 
-const getLandlords = async () => {
+const checkInput = async (data) => {
+  console.log(
+    "🚀 ~ file: LoginController.js ~ line 23 ~ checkInput ~ data",
+    data
+  );
+  if (!data) return false;
+  if (!data.username) return false;
+  if (!data.password) return false;
+  if (data.username.length < 5) return false;
+  if (data.password.length < 5) return false;
+  return true;
+};
+
+const checkDB = async (data) => {
   var result = null;
 
   const getResult = (rows) => (result = rows);
 
   await db
     .promise()
-    .query(`select * from landlords`)
-    .then(([rows]) => {
-      getResult(rows);
-      console.log("create success", rows);
-    });
+    .query(
+      `SELECT * FROM landlords WHERE user_name= '${data.username}' AND password='${data.password}'`
+    )
+    .then(([rows]) => getResult(rows));
 
   return result;
 };
