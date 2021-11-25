@@ -16,20 +16,22 @@ $(document).ready(() => {
   // });
   $("#formLogin").submit((event) => {
     event.preventDefault();
-    alert("gửi thành công");
-    console.log($("#formLogin").serialize());
+
+    console.log(
+      "🚀 ~ file: login.js ~ line 21 ~ $ ~ $(`#formLogin`).serialize()",
+      $("#formLogin").serialize()
+    );
     $("#loginResponse").text("Waiting for login...");
+
     $.post({
       url: "login",
       dataType: "json",
       data: $("#formLogin").serialize(),
       success: (res) => {
         console.log("🚀 ~ file: login.js ~ line 27 ~ $ ~ res", res);
+        $("#formLogin").trigger("reset");
         $("#loginResponse").text(res.message);
         if (res.message !== "success") return alert("đăng nhập thất bại");
-        // saveToken(res.token, res.id);
-        $('#formLogin').trigger("reset")
-        // redirectAccount(res.role);
         // window.location.href = "/home"
       },
     });
