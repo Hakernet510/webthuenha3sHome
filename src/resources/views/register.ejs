@@ -10,34 +10,30 @@
   <body class="Register">
     <div class="center">
       <h1>Register</h1>
-      <form method="post">
+      <h1 id="registerResponse" style="font-size: 16px; border-bottom: none;"></h1>
+      <form id="formRegister" method="post">
         <div class="field">
-          <input type="text" required />
+          <input type="text" name="phonenumber" required />
           <span></span>
           <label>Phone number</label>
         </div>
         <div class="field">
-          <input type="password" required />
+          <input type="password" name="password" required />
           <span></span>
           <label>Password</label>
         </div>
         <div class="field">
-          <input type="password" required />
+          <input type="password" name="Rpassword" required />
           <span></span>
           <label>Repeat password</label>
         </div>
 
-        <!-- <div>
-            <input type="submit" value="Register" />
-            <a href="../html/login.html"></a>
-        </div> -->
-
-        <div>
-          <button class="register">
-            <a href="../html/login.html">Register</a>   
-          </button>
+        <div class="register">
+          <input type="submit" value="Register">
         </div>
     </form>
     </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="../js/register.js"></script>
   </body>
 </html>

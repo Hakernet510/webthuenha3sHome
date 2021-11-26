@@ -1,9 +1,7 @@
-class HomeController {
+const { db } = require("../../connect");
 
-    index(req, res){
-        res.render('renter')
-    }
-
+const homeController = async (req, res) => {
+  console.log("req là: ", req.body);
 }
 
-module.exports = new HomeController;
+module.exports = homeController;

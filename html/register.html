@@ -10,7 +10,8 @@
   <body class="Register">
     <div class="center">
       <h1>Register</h1>
-      <form method="post">
+      <h1 id="registerResponse" style="font-size: 16px; border-bottom: none;"></h1>
+      <form id="formRegister" method="post">
         <div class="field">
           <input type="text" required />
           <span></span>
@@ -27,14 +28,9 @@
           <label>Repeat password</label>
         </div>
 
-        <!-- <div>
-            <input type="submit" value="Register" />
-            <a href="../html/login.html"></a>
-        </div> -->
-
         <div class="wrapper">
-          <input type="radio" name="select" id="option-1" checked />
-          <input type="radio" name="select" id="option-2" />
+          <input type="radio" name="role" id="option-1" />
+          <input type="radio" name="role" id="option-2" />
           <label for="option-1" class="option option-1">
             <div class="dot"></div>
             <span>Landlord</span>
@@ -45,15 +41,12 @@
           </label>
         </div>
 
-        <div>
-          <button class="register">
-            <a href="../html/login.html">Register</a>
-          </button>
+        <div class="register">
+          <input type="submit" value="Register">
         </div>
-
-        
-
       </form>
     </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="../js/register.js"></script>
   </body>
 </html>

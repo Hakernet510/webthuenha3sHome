@@ -1,4 +1,5 @@
 const { db } = require("../../connect");
+const app = require('express')
 
 const loginController = async (req, res) => {
   console.log("req là: ", req.body);
@@ -16,16 +17,12 @@ const loginController = async (req, res) => {
   //res
   res.json({
     message: "success",
-    // result,
-    resDB,
-  });
+    resDB
+  })
+
 };
 
 const checkInput = async (data) => {
-  console.log(
-    "🚀 ~ file: LoginController.js ~ line 23 ~ checkInput ~ data",
-    data
-  );
   if (!data) return false;
   if (!data.username) return false;
   if (!data.password) return false;

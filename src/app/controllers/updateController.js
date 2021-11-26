@@ -1,6 +1,6 @@
 const { db } = require("../../connect");
 
-const postController = async (req, res) => {
+const registerController = async (req, res) => {
   console.log("req là: ", req.body);
 
   const resInput = await checkInput(req.body);
@@ -30,10 +30,11 @@ const checkInput = async (data) => {
     await db
       .promise()
       .query(
-        `insert into Landlords (name,user_name,password,phone_number) values ('${data.description}', '${data.address}', '${data.street}', '${data.district}', '${data.city}', '${data.area}', '${data.price}'`
+        
       )
   
     return result;
   };
+  
 
-module.exports = postController;
+module.exports = registerController;

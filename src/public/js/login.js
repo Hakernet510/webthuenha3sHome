@@ -32,7 +32,7 @@ $(document).ready(() => {
         $("#formLogin").trigger("reset");
         $("#loginResponse").text(res.message);
         if (res.message !== "success") return alert("đăng nhập thất bại");
-        // window.location.href = "/home"
+        window.location.href = "/home"
       },
     });
   });

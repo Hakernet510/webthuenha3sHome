@@ -5,6 +5,14 @@ const homeController = require('../app/controllers/HomeController');
 
 //homeController.index
 
-router.use('/', homeController.index);
+router.post('/', homeController);
+router.get('/', (req, res)=>{
+    if(false){
+        res.render('landlord')
+    }
+    else{
+        res.render('renter')
+    }
+});
 
 module.exports = router;
