@@ -13,6 +13,11 @@
       <h1 id="registerResponse" style="font-size: 16px; border-bottom: none;"></h1>
       <form id="formRegister" method="post">
         <div class="field">
+          <input type="text" name="username" required />
+          <span></span>
+          <label>Username</label>
+        </div>
+        <div class="field">
           <input type="text" name="phonenumber" required />
           <span></span>
           <label>Phone number</label>
@@ -28,10 +33,23 @@
           <label>Repeat password</label>
         </div>
 
+        <div class="wrapper">
+          <input type="radio" name="role" id="option-1" value="0"/>
+          <input type="radio" name="role" id="option-2" value="1"/>
+          <label for="option-1" class="option option-1">
+            <div class="dot"></div>
+            <span>Landlord</span>
+          </label>
+          <label for="option-2" class="option option-2">
+            <div class="dot"></div>
+            <span>Renter</span>
+          </label>
+        </div>
+
         <div class="register">
           <input type="submit" value="Register">
         </div>
-    </form>
+      </form>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="../js/register.js"></script>
