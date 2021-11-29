@@ -13,7 +13,7 @@
     left: 50%;
     transform: translate(-50%, -50%);
     width: 400px;
-    height: 580px;
+    height: 600px;
     background: #F5F5F5;
     border-radius: 10px;
 }
@@ -133,8 +133,8 @@ input [type="submit"]:hover{
 .wrapper{
   display: inline-flex;
   background: #F5F5F5;
-  height: 25px;
-  width: 300px;
+  height: 20px;
+  width: 280px;
   align-items: center;
   justify-content: space-evenly;
   border-radius: 5px;
@@ -196,7 +196,7 @@ input [type="submit"]:hover{
     transform: scale(1);
   }
   .wrapper .option span{
-    font-size: 20px;
+    font-size: 18px;
     color: #808080;
   }
   #option-1:checked:checked ~ .option-1 span,

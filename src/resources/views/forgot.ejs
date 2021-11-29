@@ -1,41 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/forgot password.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/forgot password.css" />
     <title>Forgot password</title>
-</head>
-<body class="forgot">
+  </head>
+  <body class="forgot">
     <div class="center">
-        <h1>Password Reset</h1>
-        <h1 id="forgotResponse" style="font-size: 16px; border-bottom: none;"></h1>
-        <form id="formForgot" method="post">
-          <div class="field">
-            <input type="text" name="phonenumber" required />
-            <span></span>
-            <label>Phone number</label>
-          </div>
-          <div class="field">
-            <input type="password" name="password" required />
-            <span></span>
-            <label>New Password</label>
-          </div>
-          <div class="field">
-            <input type="password" name="Rpassword" required />
-            <span></span>
-            <label>Confirm password</label>
-          </div>
-  
-          <div>
-            <div class="register">
-              <input type="submit" value="Reset Password">   
-            </div>
-          </div>
+      <h1>Password Reset</h1>
+      <h1 id="forgotResponse" style="font-size: 16px; border-bottom: none;"></h1>
+      <form id="formForgot" method="post">
+        <div class="field">
+          <input type="text" name="username" required />
+          <span></span>
+          <label>Username</label>
+        </div>
+        <div class="field">
+          <input type="text" name="phonenumber" required />
+          <span></span>
+          <label>Phone number</label>
+        </div>
+        <div class="field">
+          <input type="password" name="password" required />
+          <span></span>
+          <label>New Password</label>
+        </div>
+        <div class="field">
+          <input type="password" name="Rpassword" required />
+          <span></span>
+          <label>Confirm password</label>
+        </div>
+
+        <input class="register" type="submit" value="Reset Password" />
       </form>
-      </div>
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-      <script src="../js/forgot.js"></script>
-</body>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="../js/forgot.js"></script>
+  </body>
 </html>

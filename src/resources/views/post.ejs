@@ -1,250 +1,133 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
-    />
-    <link rel="stylesheet" href="../css/file.css" />
-</head>
-<body>
-    <nav class="navbar">
-        <div class="container-fluid">
-          <div class="navbar-header">
-            <a class="navbar-brand" href="http://localhost:3000/home">3S Home</a>
-          </div>
-          <ul class="nav navbar-nav">
-            <li class="active"><a href="http://localhost:3000/home">Home</a></li>
-            <li class="dropdown">
-              <a class="dropdown-toggle" data-toggle="dropdown" href="#"
-                >HoChiMinh <span class="caret"></span
-              ></a>
-              <ul class="dropdown-menu">
-                <li><a href="#">District 1</a></li>
-                <li><a href="#">District 2</a></li>
-                <li><a href="#">District 3</a></li>
-                <li><a href="#">District 4</a></li>
-                <li><a href="#">District 5</a></li>
-                <li><a href="#">District 6</a></li>
-                <li><a href="#">District 7</a></li>
-                <li><a href="#">District 8</a></li>
-                <li><a href="#">District 9</a></li>
-                <li><a href="#">District 10</a></li>
-                <li><a href="#">District 11</a></li>
-                <li><a href="#">District 12</a></li>
-                <li><a href="#">BinhTan District</a></li>
-                <li><a href="#">BinhThanh District</a></li>
-                <li><a href="#">GoVap District</a></li>
-                <li><a href="#">PhuNhuan District</a></li>
-                <li><a href="#">TanBinh District</a></li>
-                <li><a href="#">TanPhu District</a></li>
-                <li><a href="#">ThuDuc District</a></li>
-              </ul>
-            </li>
-            <li class="dropdown">
-              <a class="dropdown-toggle" data-toggle="dropdown" href="#"
-                >HaNoi <span class="caret"></span
-              ></a>
-              <ul class="dropdown-menu">
-                <li><a href="#">Ba Dinh</a></li>
-                <li><a href="#">Bac Tu Liem</a></li>
-                <li><a href="#">Cau Giay</a></li>
-                <li><a href="#">Ha Dong</a></li>
-                <li><a href="#">Hai Ba Trung</a></li>
-                <li><a href="#">Hoan Kiem</a></li>
-                <li><a href="#">Hoang Mai</a></li>
-                <li><a href="#">Long Bien</a></li>
-                <li><a href="#">Nam Tu Lien</a></li>
-                <li><a href="#">Tay Ho </a></li>
-                <li><a href="#">Thanh Xuan</a></li>
-                <li><a href="#">Dong Da</a></li>
-                <li><a href="#">Chuong My</a></li>
-                <li><a href="#">Gia Lam</a></li>
-                <li><a href="#">Hoai Duc</a></li>
-                <li><a href="#">Me Linh</a></li>
-                <li><a href="#">Soc Son</a></li>
-                <li><a href="#">Thanh Tri</a></li>
-                <li><a href="#">Thuong Tin</a></li>
-                <li><a href="#">Dan Phuong</a></li>
-                <li><a href="#">Dong Anh</a></li>
-              </ul>
-            </li>
-            <li class="dropdown">
-              <a class="dropdown-toggle" data-toggle="dropdown" href="#"
-                >DaNang <span class="caret"></span
-              ></a>
-              <ul class="dropdown-menu">
-                <li><a href="#">Lien Chieu</a></li>
-                <li><a href="#">Thanh Khe</a></li>
-                <li><a href="#">Hai Chau</a></li>
-                <li><a href="#">Son Tra</a></li>
-                <li><a href="#">Ngu Hanh Son</a></li>
-                <li><a href="#">Cam Le</a></li>
-                <li><a href="#">Hoa Vang</a></li>
-              </ul>
-            </li>
-          </ul>
-          </nav>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Post</title>
+    <link rel="stylesheet" href="../css/orther post.css" />
+  </head>
+  <body class="post">
+    <div class="center">
+      <h1>Postting</h1>
+      <h1 id="forgotResponse" style="font-size: 16px; border-bottom: none;"></h1>
+      <form id="formPost" method="post">
+        <h2>Thông tin cơ bản</h2>
+        <div class="form-group title field">
+          <label for="usr">Title</label>
+          <input class="input" type="text" name="title" class="form-control" id="usr">
+        </div>
 
-          <h2 class="postting">Postting</h2>
+        <div class="basic">
+          <div class="input">
+            <div class="cate">
+            <span>Categories</span>
+            <select name="categories">
+              <option value="1">Cho thuê phòng trọ</option>
+              <option value="2">Tìm ở ghép</option>
+            </select>
+            </div>
+            <br>
+
+            <div class="dis">
+              <span>District</span>
+              <select name="district">
+                <option value="">Quận 1</option>
+                <option value="">Quận 2</option>
+                <option value="">Quận 3</option>
+                <option value="">Quận 4</option>
+                <option value="">Quận 5</option>
+                <option value="">Quận 6</option>
+                <option value="">Quận 7</option>
+                <option value="">Quận 8</option>
+                <option value="">Quận 9</option>
+                <option value="">Quận 10</option>
+                <option value="">Quận 11</option>
+                <option value="">Quận 12</option>
+              </select>
+            </div>
+            
+            
+
+            <br>
+            <div class="price">
+              <span>Price</span>
+              <input type="text" name="price" placeholder="Ex: If 2.5 milions VNĐ then type 2.5" required/>
+            </div>
+            
+            <br>
+            
           
-          <form class="form1" onsubmit="submit(e)">
-            <div class="drop">
-            <div class="dropdown">
-            <p>
-              Tỉnh/Thành phố
-            </p>
-            <button class="btn btn-primary dropdown-toggle City" type="button" data-toggle="dropdown">City
-            <span class="caret"></span></button>
-            <ul class="dropdown-menu">
-              <li><a href="#">HoChiMinh</a></li>
-              <li><a href="#">HaNoi</a></li>
-              <li><a href="#">DaNang</a></li>
-            </ul>
-          </div>
+            <br>
 
-          <div class="dropdown">
-            <p>
-              Quận/Huyện
-            </p>
-            <button class="btn btn-primary dropdown-toggle District" type="button" data-toggle="dropdown">District
-            <span class="caret"></span></button>
-            <ul class="dropdown-menu">
-              <li><a href="#">District 1</a></li>
-              <li><a href="#">District 2</a></li>
-              <li><a href="#">District 3</a></li>
-              <li><a href="#">District 4</a></li>
-              <li><a href="#">District 5</a></li>
-              <li><a href="#">District 6</a></li>
-              <li><a href="#">District 7</a></li>
-              <li><a href="#">District 8</a></li>
-              <li><a href="#">District 9</a></li>
-              <li><a href="#">District 10</a></li>
-              <li><a href="#">District 11</a></li>
-              <li><a href="#">District 12</a></li>
-              <li><a href="#">BinhTan District</a></li>
-              <li><a href="#">BinhThanh District</a></li>
-              <li><a href="#">GoVap District</a></li>
-              <li><a href="#">PhuNhuan District</a></li>
-              <li><a href="#">TanBinh District</a></li>
-              <li><a href="#">TanPhu District</a></li>
-              <li><a href="#">ThuDuc District</a></li>
-            </ul>
-          </div>
+            <br>
+          <div class="Address">
+            <span>Address</span>
+            <input class="address" name="address" type="text" required/>
+          </div>    
+        </div>
+            
+        <div class="input height">               
+            <div>
+              <span>City</span>
+              <select name="city">
+                <option value="HoChiMinh">HoChiMinh</option>
+                <option value="HaNoi">HaNoi</option>
+                <option value="DaNang">DaNang</option>
+              </select>
+            </div>
 
-          <div class="dropdown">
-            <p>
-              Phường/Xã
-            </p>
-            <button class="btn btn-primary dropdown-toggle Wards" type="button" data-toggle="dropdown">Wards
-            <span class="caret"></span></button>
-            <ul class="dropdown-menu">
-              <li><a href="#">1</a></li>
-              <li><a href="#">2</a></li>
-              <li><a href="#">3</a></li>
-              <li><a href="#">4</a></li>
-              <li><a href="#">5</a></li>
-              <li><a href="#">6</a></li>
-            </ul>
-          </div>
+            <br><br><br><br>
 
-          <div class="dropdown">
-            <p>
-              Đường/Phố
-            </p>
-            <button class="btn btn-primary dropdown-toggle Street" type="button" data-toggle="dropdown">Street
-            <span class="caret"></span></button>
-            <ul class="dropdown-menu">
-              <li><a href="#">hương lộ 2</a></li>
-              <li><a href="#">bình trị đông</a></li>
-              <li><a href="#">tân hoà đông</a></li>
-              <li><a href="#">lê văn quới</a></li>
-            </ul>
+            <div class="square">
+              <label>Area</label>
+              <input type="text" name="area" required/>
+              <span>m<sup>2</sup></span>
+            </div>
+            <br><br>
+
+            <br>
+            <div class="PriceUnit">
+              <span>Price Unit</span>
+              <select class="priceunit" name="priceUnit">
+                <option value="triệu/tháng">Triệu/tháng</option>
+                <option value="triệu/năm">Triệu/năm</option>
+              </select>
+            </div>
+       </div>
+        </div>
+
+        <div class="advance">
+          <h2>Thông tin mô tả</h2>
+          <div class="group">
+            <label for="pwd">Nội Dung Mô Tả</label>
+            <textarea class="form-control textarea" name="description" rows="5" id="comment"></textarea>
           </div>
         </div>
-          <!-- <button type="submit">
-            submit
-          </button> -->
-        
 
-        <h2>
-          Thông tin mô tả
-        </h2>
-        
-        <div class="categories">
-        <p>
-          Loại chuyên mục
-        </p>
-        <div class="dropdown">
-          <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Chọn loại chuyên mục
-          <span class="caret"></span></button>
-          <ul class="dropdown-menu">
-            <li><a href="#">Phòng trọ</a></li>
-            <li><a href="#">Nhà trọ</a></li>
-            <li><a href="#">Ở ghép</a></li>
-          </ul>
-        </div>
-      </div>
-
-        <div class="form-group title">
-          <label for="usr">Tiêu đề</label>
-          <input class="input" type="text" class="form-control" id="usr">
-        </div>
-        <div class="form-group">
-          <label for="pwd">Nội Dung Mô Tả</label>
-          <textarea class="form-control textarea" rows="5" id="comment"></textarea>
-        </div>
-
-        <div class="form-group">
-          <label for="usr">Thông tin liên hệ</label>
-          <input class="input" type="text" class="form-control" id="usr">
-        </div>
-
-        <div class="form-group">
-          <label for="usr">Giá cho thuê</label>
-          <span></span>
-          <input class="input" type="text" class="form-control" id="usr">
-        </div>
-
-        <div class="form-group">
-          <label for="usr">Diện tích</label>
-          <span></span>
-          <input class="input" type="text" class="form-control" id="usr">
-        </div>
-
-        
-        <div class="dropdown">
-          <p>
-            Đối tượng cho thuê
-          </p>
-          <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">gender
-          <span class="caret"></span></button>
-          <ul class="dropdown-menu">
-            <li><a href="#">Nam</a></li>
-            <li><a href="#">Nữ</a></li>
-          </ul>
-        </div>
-
-        <div class="img">
-          <h2>Hình ảnh</h2>
-
-          <div class="img-file">
-            <input type="file" name="" id="">
+        <div class="contact">
+          <h2>Thông tin liên hệ</h2>
+          <div>
+            <label for="">Tên liên hệ</label>
+            <input type="text" name="name" required/>
           </div>
-
+          <div>
+            <label for="">Điện thoại</label>
+            <input type="text" name="phonenumber" required/>
+          </div>
+          <div>
+            <label for="">Email</label>
+            <input type="text" name="email" required/>
+          </div>
         </div>
+  
+        <br />
+        <input class="submit" type="submit" value="Post">
+       
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="../js/post.js"></script>
 
       </form>
-
-
-          <!-- <div class="alert alert-success">
-            <strong>Success!</strong> Your post is now on.
-          </div> -->
-          <script src="../js/HandleSubmit.js"></script>
-          <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-          <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-</body>
+    </div>
+  </body>
 </html>

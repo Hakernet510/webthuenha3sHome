@@ -3,7 +3,7 @@ const router = express.Router();
 
 const forgotController = require('../app/controllers/ForgotController');
 
-//regiterController.index
+//forgotController.index
 
 router.post('/', forgotController);
 router.get('/', (req, res)=>{

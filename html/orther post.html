@@ -11,134 +11,146 @@
     <div class="center">
       <h1>Postting</h1>
       <form method="post">
-        <!-- <div class="field">
-          <input type="text" required />
-          <span></span>
-          <label>Username</label>
+        <h2>Thông tin cơ bản</h2>
+        <div class="form-group title field">
+          <label for="usr">Title</label>
+          <input class="input" type="text" class="form-control" id="usr" required/>
         </div>
-        <div class="field">
-          <input type="text" required />
-          <span></span>
-          <label>Phone number</label>
-        </div>
-        <div class="field">
-          <input type="password" required />
-          <span></span>
-          <label>Password</label>
-        </div>
-        <div class="field">
-          <input type="password" required />
-          <span></span>
-          <label>Repeat password</label>
+
+        <!-- <div class="form-group field">
+          <label for="usr">Thông tin liên hệ</label>
+          <input class="input" type="text" class="form-control" id="usr" required/>
         </div> -->
 
-        <div class="form-group title field">
-          <label for="usr">Tiêu đề tin</label>
-          <input class="input" type="text" class="form-control" id="usr" />
-        </div>
-
-        <div class="form-group field">
-          <label for="usr">Thông tin liên hệ</label>
-          <input class="input" type="text" class="form-control" id="usr" />
-        </div>
-
-        <div class="form-group field">
-          <label for="usr">Giá cho thuê</label>
+        <!-- <div class="form-group field ">
+          <label for="usr">Price</label>
           <span></span>
-          <input class="input" type="text" class="form-control" id="usr" />
-        </div>
+          <input class="input" type="text" class="form-control" id="usr" placeholder="Ex: If 2.5 milions VNĐ then type 2.5" required/>
+        </div> -->
 
-        <div class="form-group field">
+        <!-- <div class="form-group field area">
           <label for="usr">Diện tích</label>
           <span></span>
-          <input class="input" type="text" class="form-control" id="usr" />
-        </div>
-
-        <div>
-          <label>City</label>
-          <select>
-            <option value="HoChiMinh">HoChiMinh</option>
-            <option value="HaNoi">HaNoi</option>
-            <option value="DaNang">DaNang</option>
-          </select>
-
-          <label>Chuyên mục</label>
-          <select class="label">
-            <option value="1">Cho thuê phòng trọ</option>
-            <option value="2">Tìm ở ghép</option>
-          </select>
-
-          <label>Đơn vị giá</label>
-          <select>
-            <option value="">Triệu/tháng</option>
-            <option value="">Triệu/năm</option>
-          </select>
-          <br>
-          <!-- <label >Quận/Huyện</label> -->
-          <span title="quận huyện">Quận/Huyện</span>
-          <select multiple>
-            <option value="">Quận 1</option>
-          </select>
-        </div>
-
-         
-          
-        <div class="square">
-          <label>Diện tích</label>
-          <input type="text" class="area" />
+          <input class="input" type="text" class="form-control" id="usr" required/> 
           <span>m<sup>2</sup></span>
+        </div> -->
+
+        <div class="basic">
+          <div class="input">
+            <div class="cate">
+            <span>Categories</span>
+            <select>
+              <option value="1">Cho thuê phòng trọ</option>
+              <option value="2">Tìm ở ghép</option>
+            </select>
+            </div>
+            <br>
+
+            <div class="dis">
+              <span>District</span>
+              <select>
+                <option value="">Quận 1</option>
+                <option value="">Quận 2</option>
+                <option value="">Quận 3</option>
+                <option value="">Quận 4</option>
+                <option value="">Quận 5</option>
+                <option value="">Quận 6</option>
+                <option value="">Quận 7</option>
+                <option value="">Quận 8</option>
+                <option value="">Quận 9</option>
+                <option value="">Quận 10</option>
+                <option value="">Quận 11</option>
+                <option value="">Quận 12</option>
+              </select>
+            </div>
+            
+            
+
+            <br>
+            <div class="price">
+              <span>Price</span>
+              <input type="text" placeholder="Ex: If 2.5 milions VNĐ then type 2.5">
+            </div>
+            
+            <br>
+            
+          
+            <br>
+
+            <br>
+          <div class="Address">
+            <span>Address</span>
+            <input class="address" type="text">
+          </div>    
+        </div>
+            
+        <div class="input height">               
+            <div>
+              <span>City</span>
+              <select>
+                <option value="HoChiMinh">HoChiMinh</option>
+                <option value="HaNoi">HaNoi</option>
+                <option value="DaNang">DaNang</option>
+              </select>
+            </div>
+
+            <br><br><br><br>
+
+            <div class="square">
+              <label>Area</label>
+              <input type="text" required/>
+              <span>m<sup>2</sup></span>
+            </div>
+            <br><br>
+
+            <br>
+            <div class="PriceUnit">
+              <span>Price Unit</span>
+              <select class="priceunit">
+                <option value="">Triệu/tháng</option>
+                <option value="">Triệu/năm</option>
+              </select>
+            </div>
+       </div>
         </div>
 
-        <!-- <div class="form-group">
-          <label for="pwd">Nội Dung Mô Tả</label>
-          <textarea
-            class="form-control textarea"
-            rows="5"
-            id="comment"
-          ></textarea>
-        </div> -->
-
-        <!-- <div class="label" >
-        <label for="browser" class="form-label label"
-          ></label
-        >
-        <input class="label" placeholder="City"
-          class="form-control"
-          list="browsers"
-          name="browser"
-          id="browser"
-        />
-        <datalist id="browsers">
-          <option value="HaNoi"></option>
-          <option value="HoChiMinh"></option>
-          <option value="DaNang"></option>
-        </datalist>
+        <div class="advance">
+          <h2>Thông tin mô tả</h2>
+          <div class="group">
+            <label for="pwd">Nội Dung Mô Tả</label>
+            <textarea class="form-control textarea" rows="5" id="comment"></textarea>
+          </div>
         </div>
-        <br><br> -->
 
-        <!-- <div>
-            <input type="submit" value="Register" />
-            <a href="../html/login.html"></a>
-        </div> -->
-
-        <!-- <div class="wrapper">
-          <input type="radio" name="select" id="option-1" checked />
-          <input type="radio" name="select" id="option-2" />
-          <label for="option-1" class="option option-1">
-            <div class="dot"></div>
-            <span>Landlord</span>
-          </label>
-          <label for="option-2" class="option option-2">
-            <div class="dot"></div>
-            <span>Renter</span>
-          </label>
-        </div> -->
+        <div class="contact">
+          <h2>Thông tin liên hệ</h2>
+          <div>
+            <label for="">Tên liên hệ</label>
+            <input type="text">
+          </div>
+          <div>
+            <label for="">Điện thoại</label>
+            <input type="text">
+          </div>
+          <div>
+            <label for="">Email</label>
+            <input type="text">
+          </div>
+        </div>
+          
+          
+        
+  
         <br />
-        <div>
+        <input class="submit" type="submit" value="Post">
+       
+       
+        <!-- <div>
           <button class="register">
             <a href="../html/login.html">Post</a>
           </button>
-        </div>
+        </div> -->
+
       </form>
     </div>
   </body>

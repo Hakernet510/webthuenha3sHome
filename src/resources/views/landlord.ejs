@@ -14,10 +14,14 @@
     <nav class="navbar">
       <div class="container-fluid">
         <div class="navbar-header">
-          <a class="navbar-brand" href="http://localhost:3000/home">3S Home</a>
+          <a class="navbar-brand" href="http://localhost:3000/landlord"
+            >3S Home</a
+          >
         </div>
         <ul class="nav navbar-nav">
-          <li class="active"><a href="http://localhost:3000/home">Home</a></li>
+          <li class="active">
+            <a href="http://localhost:3000/landlord">Home</a>
+          </li>
           <li class="dropdown">
             <a class="dropdown-toggle" data-toggle="dropdown" href="#"
               >HoChiMinh <span class="caret"></span
@@ -94,14 +98,17 @@
             >
           </li>
           <li>
-            <a href="http://localhost:3000/login"
+            <a onclick="logout()" href="http://localhost:3000/login"
               ><span class="glyphicon glyphicon-log-out"></span> logout</a
             >
           </li>
         </ul>
       </div>
     </nav>
-
+    <h2 id="h2"></h2>
+    <button onclick="this.innerHTML=localStorage.getItem('UserID')">
+      haha
+    </button>
     <div class="container">
       <div class="row" style="display: flex">
         <div>
@@ -140,5 +147,10 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script>
+      const logout = () => {
+        localStorage.removeItem("user");
+      };
+    </script>
   </body>
 </html>

@@ -16,8 +16,12 @@ $(document).ready(() => {
           console.log("🚀 ~ file: forgot.js ~ line 27 ~ $ ~ res", res);
           $("#formForgot").trigger("reset");
           $("#forgotResponse").text(res.message);
+          if (res.message === "Account doesn't exists") return alert("tài khoản không tồn tại");
+          if (res.message === "Wrong phone number") return alert("sai số điện thoại");
+          if (res.message === "Repeat wrong password") return alert("mật khẩu nhập lại không khớp");
           if (res.message !== "success") return alert("thay mật khẩu thất bại");
-          window.location.href = "/login"
+          window.location.href = "/login";
+          alert("thay mật khẩu thành công");
         },
       });
     });

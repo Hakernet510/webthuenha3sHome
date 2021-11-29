@@ -16,6 +16,8 @@ const registerController = async (req, res) => {
   const resP = await checkPass(req.body);
   if (!resP) return res.json({message: "Repeat wrong password"});
 
+  await insertDB(req.body);
+
   res.json({
     message: "success",
   })
@@ -28,7 +30,7 @@ const checkInput = async (data) => {
     if (!data.password) return false;
     if (!data.Rpassword) return false;
     if (!data.role) return false;
-    // if (!data.name) return false;
+    if (!data.name) return false;
     if (data.username < 5) return false;
     if (data.phonenumber.length < 8) return false;
     if (data.password.length < 5) return false;
@@ -65,12 +67,15 @@ const checkInput = async (data) => {
   };
 
   const insertDB = async (data) => {
-  
+    const result = data.username;
+
     await db
       .promise()
       .query(
-        `insert into Landlords (name,user_name,password,phone_number) values ('${data.name}', '${data.username}', '${data.password}', '${data.phonenumber}', '${data.role}'`
+        `INSERT INTO Landlords (name,user_name,password, phone_number, role) VALUES ('${data.name}', '${data.username}', '${data.password}', '${data.phonenumber}', ${data.role});`
       )
+
+      return result;
   };
   
   const checkPass = async (data) => {

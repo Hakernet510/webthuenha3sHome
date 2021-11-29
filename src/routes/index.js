@@ -1,16 +1,20 @@
 const loginController = require('./login')
-const homeController = require('./home')
+const renterController = require('./renter')
 const registerController = require('./register')
 const postController = require('./post')
 const filterController = require('./filter')
-const boxController = require('./box')
+const landlordController = require('./landlord')
 const forgotController = require('./forgot')
+const detailController = require('./detail')
+const manageController = require('./manage')
 
 function route(app) {
 
     app.use('/login', loginController)
 
-    app.use('/home', homeController)
+    app.use('/renter', renterController)
+
+    app.use('/landlord', landlordController)
       
     app.use('/register', registerController)
 
@@ -20,7 +24,9 @@ function route(app) {
 
     app.use('/filter', filterController)
 
-    app.use('/box', boxController)
+    app.use('/detail', detailController)
+
+    app.use('/manage', manageController)
 }
 
 module.exports = route;

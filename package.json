@@ -6,7 +6,8 @@
   "scripts": {
     "start": "nodemon --inspect src/index.js",
     "watch": "node-sass --watch src/resources/scss --output src/public/css",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "local": "nodemon -r node-localstorage/register src/index.js"
   },
   "repository": {
     "type": "git",
@@ -23,7 +24,8 @@
     "express": "^4.17.1",
     "express-handlebars": "^5.3.4",
     "mysql": "^2.18.1",
-    "mysql2": "^2.3.3"
+    "mysql2": "^2.3.3",
+    "node-localstorage": "^2.2.1"
   },
   "devDependencies": {
     "morgan": "^1.10.0",

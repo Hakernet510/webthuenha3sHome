@@ -1,9 +1,8 @@
-class FilterController {
+const { db } = require("../../connect");
+const app = require('express')
 
-    index(req, res){
-        res.render('filter')
-    }
+const filterController = async (req, res) => {
 
 }
 
-module.exports = new FilterController;
+module.exports = filterController;

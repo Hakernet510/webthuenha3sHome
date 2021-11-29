@@ -12,12 +12,12 @@ const loginController = async (req, res) => {
   const resDB = await checkDB(req.body);
   if (resDB.length === 0) return res.json({ message: "fail" });
 
-  //main
+  const R = await getRole(req.body);
 
-  //res
   res.json({
     message: "success",
-    resDB
+    user: resDB,
+    role: R.role
   })
 
 };
@@ -43,7 +43,22 @@ const checkDB = async (data) => {
     )
     .then(([rows]) => getResult(rows));
 
-  return result;
+  return result[0];
 };
+
+  const getRole = async (data) => {
+    var result = null;
+
+    const getResult = (rows) => (result = rows);
+
+    await db
+      .promise()
+      .query(
+        `SELECT role FROM landlords WHERE user_name= '${data.username}' AND password='${data.password}'`
+      )
+      .then(([rows]) => getResult(rows));
+
+    return result[0] ;
+  }
 
 module.exports = loginController;
