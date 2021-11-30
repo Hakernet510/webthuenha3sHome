@@ -25,7 +25,8 @@
     "express-handlebars": "^5.3.4",
     "mysql": "^2.18.1",
     "mysql2": "^2.3.3",
-    "node-localstorage": "^2.2.1"
+    "node-localstorage": "^2.2.1",
+    "store": "^2.0.12"
   },
   "devDependencies": {
     "morgan": "^1.10.0",

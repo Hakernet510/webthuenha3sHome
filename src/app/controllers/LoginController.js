@@ -12,6 +12,10 @@ const loginController = async (req, res) => {
   const resDB = await checkDB(req.body);
   if (resDB.length === 0) return res.json({ message: "fail" });
 
+  const saveID = await getID(req.body);
+
+  await insertID(saveID);
+
   const R = await getRole(req.body);
 
   res.json({
@@ -45,6 +49,29 @@ const checkDB = async (data) => {
 
   return result[0];
 };
+
+const getID = async (data) => {
+  var result = null;
+
+  const getResult = (rows) => (result = rows);
+
+  await db
+    .promise()
+    .query(
+      `SELECT id FROM landlords WHERE user_name= '${data.username}' AND password='${data.password}'`
+    )
+    .then(([rows]) => getResult(rows));
+
+  return result[0] ;
+}
+
+const insertID = async (data) => {
+  await db
+    .promise()
+    .query(
+      `INSERT INTO user (userID) VALUES ('${data.id}')`
+    )
+}
 
   const getRole = async (data) => {
     var result = null;

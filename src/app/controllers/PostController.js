@@ -1,4 +1,8 @@
 const { db } = require("../../connect");
+if (typeof localStorage === "undefined" || localStorage === null) {
+  var LocalStorage = require('node-localstorage').LocalStorage;
+  localStorage = new LocalStorage('./scratch');
+}
 
 const postController = async (req, res) => {
   console.log("req là: ", req.body);
@@ -6,9 +10,11 @@ const postController = async (req, res) => {
   // const resInput = await checkInput(req.body);
   // if (!resInput) return res.json({ message: "fail" });
 
+  var a = localStorage.getItem('user');
+
   res.json({
     message: "success",
-    user: JSON.parse(localStorage.getItem("user")),
+    user: a
   });
 };
 

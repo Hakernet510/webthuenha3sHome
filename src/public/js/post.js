@@ -1,7 +1,7 @@
 $(document).ready(() => {
     $("#formPost").submit((event) => {
       event.preventDefault();
-  
+      
       console.log(
         "🚀 ~ file: post.js ~ line 21 ~ $ ~ $(`#formPost`).serialize()",
         $("#formPost").serialize()

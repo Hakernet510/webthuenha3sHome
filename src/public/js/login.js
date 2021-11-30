@@ -20,7 +20,7 @@ $(document).ready(() => {
         localStorage.setItem('user', JSON.stringify(res.user) );
         var a = JSON.parse(localStorage.getItem('user'));
         console.log("🚀 ~ file: login.js ~ line 27 ~ $ ~ res", a.ID);
-        if (res.role === 0) {
+        if (res.role == 0) {
           window.location.href = "/landlord"
         } else{
           window.location.href = "/renter"
