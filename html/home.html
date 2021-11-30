@@ -90,131 +90,247 @@
       </div>
     </nav>
 
+    <div class="search">
+        <div class="box">
+          <h4>Quick Search</h4>
+          <div class="bs-content">
+            <div class="searchbar">
+              <div class="select">
+                <select>
+                  <option value="0">--Information of room--</option>
+                  <option value="1">Cho thuê phòng trọ</option>
+                  <option value="11">Cho thuê căn hộ</option>
+                  <option value="2">Cho thuê nhà nguyên căn</option>
+                  <option value="3">Tìm người ở ghép</option>
+                </select>
+              </div>
+              <div class="select">
+                <select>
+                  <option value="">--City--</option>
+                  <option value="SG">HoChiMinh</option>
+                  <option value="HN">HaNoi</option>
+                  <option value="DN">DaNang</option>
+                </select>
+              </div>
+              <div class="select">
+                <select>
+                  <option value="">--District--</option>
+                  <option value="72">Bình Chánh</option>
+                  <option value="65">Bình Tân</option>
+                  <option value="66">Bình Thạnh</option>
+                  <option value="73">Cần Giờ</option>
+                  <option value="74">Củ Chi</option>
+                  <option value="67">Gò Vấp</option>
+                  <option value="75">Hóc Môn</option>
+                  <option value="76">Nhà Bè</option>
+                  <option value="68">Phú Nhuận</option>
+                  <option value="53">Quận 1</option>
+                  <option value="62">Quận 10</option>
+                  <option value="63">Quận 11</option>
+                  <option value="64">Quận 12</option>
+                  <option value="54">Quận 2</option>
+                  <option value="55">Quận 3</option>
+                  <option value="56">Quận 4</option>
+                  <option value="57">Quận 5</option>
+                  <option value="58">Quận 6</option>
+                  <option value="59">Quận 7</option>
+                  <option value="60">Quận 8</option>
+                  <option value="61">Quận 9</option>
+                  <option value="69">Tân Bình</option>
+                  <option value="70">Tân Phú</option>
+                  <option value="71">Thủ Đức</option>
+                </select>
+              </div>
+              <div class="select">
+                <select>
+                  <option value="0">--Price--</option>
+                  <option value="1">Thỏa thuận</option>
+                  <option value="2">Dưới 1 triệu</option>
+                  <option value="3">1 triệu - 2 triệu</option>
+                  <option value="4">2 triệu - 3 triệu</option>
+                </select>
+              </div>
+              <div class="select">
+                <select>
+                  <option value="0">Area</option>
+                  <option value="1">Chưa xác định</option>
+                  <!-- <option value="2"><15m2</option> -->
+                  <option value="3">20 m2</option>
+                  <option value="4">20 - 30 m2</option>
+                  <option value="5">Trên 50 m2</option>
+                </select>
+              </div>
 
-   
-    <div class="searchbar_top hidden-xs">
-      <div class="searchbar_top_body">
-          <div class="box-search">
-              <h4 class="title">Quick Search</h4>
-              <div class="bs-content">
-                  <div class="row">
-                      <div class="col-xs-12 col-sm-6 col-md-2">
-                          <select id="ddlPostCate" name="CategoryId" class="form-control select2-hidden-accessible" tabindex="-1" aria-hidden="true">
-                              <option value="0">information of room</option>
-                          <option value="1">Cho thuê phòng trọ</option><option value="11">Cho thuê căn hộ</option><option value="2">Cho thuê nhà nguyên căn</option><option value="3">Tìm người ở ghép</option></select>
-                      </div>
-                      <div class="col-xs-12 col-sm-6 col-md-2">
-                          <select id="ddlProvince" name="ProvinceId" class="form-control select2-hidden-accessible" tabindex="-1" aria-hidden="true">
-                              <option value="">city</option>
-                          <option value="SG">HoChiMinh</option><option value="HN">HaNoi</option><option value="DN">DaNang</option></select>
-                      </div>
-                      <div class="col-xs-12 col-sm-6 col-md-2">
-                        <select id="ddlDistrict" name="DistrictId" class="form-control select2-hidden-accessible" tabindex="-1" aria-hidden="true">
-                          <option value="">District</option>
-                          <option value="72">Bình Chánh</option>
-                          <option value="65">Bình Tân</option>
-                          <option value="66">Bình Thạnh</option>
-                          <option value="73">Cần Giờ</option>
-                          <option value="74">Củ Chi</option>
-                          <option value="67">Gò Vấp</option>
-                          <option value="75">Hóc Môn</option>
-                          <option value="76">Nhà Bè</option>
-                          <option value="68">Phú Nhuận</option>
-                          <option value="53">Quận 1</option>
-                          <option value="62">Quận 10</option>
-                          <option value="63">Quận 11</option>
-                          <option value="64">Quận 12</option>
-                          <option value="54">Quận 2</option>
-                          <option value="55">Quận 3</option>
-                          <option value="56">Quận 4</option>
-                          <option value="57">Quận 5</option>
-                          <option value="58">Quận 6</option>
-                          <option value="59">Quận 7</option>
-                          <option value="60">Quận 8</option>
-                          <option value="61">Quận 9</option>
-                          <option value="69">Tân Bình</option>
-                          <option value="70">Tân Phú</option>
-                          <option value="71">Thủ Đức</option>
-                        </select>
-                    </div>
-                      <div class="col-xs-12 col-sm-6 col-md-2">
-                          <select id="ddlStreet" name="StreetId" class="form-control select2-hidden-accessible" tabindex="-1" aria-hidden="true">
-                              <option value="0">Street</option>
-                          </select>
-                      </div>
-                      <div class="col-xs-12 col-sm-6 col-md-2">
-                          <select id="ddlPrice" name="PriceId" style="width:100%" class="form-control">
-                              <option value="0">price</option>
-                              <option value="1">Thỏa thuận</option>
-                              <option value="2">Dưới 1 triệu</option>
-                              <option value="3">1 triệu - 2 triệu</option>
-                              <option value="4">2 triệu - 3 triệu</option>
-                          </select>
-                      </div>
-                      <div class="col-xs-12 col-sm-6 col-md-2">
-                          <select id="ddlArea" name="AreaId" style="width:100%" class="form-control">
-                              <option value="0">area</option>
-                              <option value="1">Chưa xác định</option>
-                              <option value="2"> 20 m2</option>
-                              <option value="3">20 - 30 m2</option>
-                              <option value="4">Trên 50 m2</option>
-                          </select>
-                      </div>
-                  </div>
+              <div class="submit">
+                <input type="submit" value="Search" style="width: 100%" />
               </div>
-              <div class="bs-search">
-                  <button class="btn btn-warning btn-block" id="btnSearch"><i class="fa fa-search"></i>Search</button>
-              </div>
-          </div>
-      </div>  
-      <div class="access_page">
-            <div class="page_content intro_page clearfix">
-                <ul class="nav nav-tabs tab_huongdan" role="tablist">
-        <li class="active"><a href="/savepost.html"><i class="fa fa-list-alt"></i> Postting</a></li>
-        <li><a href="/Account_information.html"><i class="fa fa-user"></i>Account information</a></li>
-    </ul>
-                <div class="tab-content">
-                    <h4>QUẢN LÝ TIN (0)</h4>
-                    <hr>
-                    <div class="dataTables_wrapper form-inline">
-                        <div class="row">
-                            <div class="col-sm-8 col-xs-12">
-                                <div class="dataTables_length">
-                                    <select id="ddlPostCate" name="CategoryId" class="form-control" onchange="search(this.value)">
-                                        <option value="">-- Loại tin đăng --</option>
-                                        <option value="1">Cho thuê phòng trọ</option>
-                                        <option value="11">Cho thuê căn hộ</option>
-                                        <option value="2">Nhà cho thuê</option>
-                                        <option value="3">Tìm người ở ghép</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="clearfix"><br></div>
-        <table class="table table-bordered table-striped table-vcenter dataTable no-footer table_banggia" role="grid" "="">
-            <thead>
-                <tr>
-                    <td>Tiêu đề</td>
-                    <td class="text-center">Trạng thái</td>
-                    <td class="text-center">Thao tác</td>
-                </tr>
-            </thead>
-                <tbody>
-                    <tr class="text-center">
-                        <td colspan="7">Bạn chưa có tin đăng nào</td>
-                    </tr>
-                </tbody>
-        </table>
-                        <div class="paging-container">
-                            <input name="__RequestVerificationToken" type="hidden" value="D4vicQX-s_DQkQiHRBBocG87qyZljCCEMEqTudt69RzhK4hzG2Ve3WnnuiYUms-pA95ABxIBRIYpCGy7q8tDHXrZNHJUhlc3eICgm2rs6sA1">
-                        </div>
-                    </div>
-                </div>
             </div>
+          </div>
+          <!-- <div class="bs-search">
+                  <button class="btn btn-warning btn-block" id="btnSearch"><i class="fa fa-search"></i>Search</button>
+              </div> -->
         </div>
-  
+
+        <div class="post">
+          <div class="left1 item">
+              <div class="img">
+                <img class="picture" src="../image/thuduc.jpg" alt="nhà thủ đức">
+              </div>
+
+              <div class="text">
+                  <h4>Phòng trọ cao cấp Thủ Đức</h4>
+                  <div>
+                    <span><i></i> <b>33 m²</b></span> 
+                    <span class="rating" style="color: #fc0">
+                      <i class="fa fa-star"></i>
+                      <i class="fa fa-star"></i>
+                      <i class="fa fa-star"></i>
+                      <i class="fa fa-star"></i>
+                      <i class="fa fa-star"></i>
+                   </span>
+                  </div>
+
+                  <div class="localtion">
+                    <span> <b><a>Thủ Đức, Hồ Chí Minh</a></b></span>
+                </div>
+
+                <div class="price">
+                  <span>3.8 Triệu/tháng</span>
+                </div>
+
+              </div>
+              
+          </div>
+
+          <div class="right1 item">
+            <div class="img">
+              <img class="picture" src="../image/thuduc.jpg" alt="nhà thủ đức">
+            </div>
+
+            <div class="text">
+                <h4>Phòng trọ cao cấp Thủ Đức</h4>
+                <div>
+                  <span><i></i> <b>33 m²</b></span> 
+                  <span class="rating" style="color: #fc0">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                 </span>
+                </div>
+
+                <div class="localtion">
+                  <span> <b><a>Thủ Đức, Hồ Chí Minh</a></b></span>
+              </div>
+
+              <div class="price">
+                <span>3.8 Triệu/tháng</span>
+              </div>
+
+            </div>
+            
+          </div>
+
+          <div class="left2 item">
+            <div class="img">
+              <img class="picture" src="../image/thuduc.jpg" alt="nhà thủ đức">
+            </div>
+
+            <div class="text">
+                <h4>Phòng trọ cao cấp Thủ Đức</h4>
+                <div>
+                  <span><i></i> <b>33 m²</b></span> 
+                  <span class="rating" style="color: #fc0">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                 </span>
+                </div>
+
+                <div class="localtion">
+                  <span> <b><a>Thủ Đức, Hồ Chí Minh</a></b></span>
+              </div>
+
+              <div class="price">
+                <span>3.8 Triệu/tháng</span>
+              </div>
+
+            </div>
+            
+          </div>
+
+          <div class="right2 item">
+            <div class="img">
+              <img class="picture" src="../image/thuduc.jpg" alt="nhà thủ đức">
+            </div>
+
+            <div class="text">
+                <h4>Phòng trọ cao cấp Thủ Đức</h4>
+                <div>
+                  <span><i></i> <b>33 m²</b></span> 
+                  <span class="rating" style="color: #fc0">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                 </span>
+                </div>
+
+                <div class="localtion">
+                  <span> <b><a>Thủ Đức, Hồ Chí Minh</a></b></span>
+              </div>
+
+              <div class="price">
+                <span>3.8 Triệu/tháng</span>
+              </div>
+
+            </div>
+            
+          </div>
+      </div>
+
+
+    </div>
+
     
-    <div class="container">
+
+
+
+
+
+
+
+
+    <!-- <div class="image">
+        <div class="row" style="display: flex">
+          <div>
+            <img
+              src="../image/hcm.png"
+              alt="HoChiMinh"
+              
+            />
+          </div>
+          <div>
+            <img
+              src="../image/danang.png"
+              alt="DaNang"
+              "
+            />
+          </div>
+          <div>
+            <img
+              src="../image/hanoi.png"
+              alt="HaNoi"
+            />
+          </div>
+        </div>
+      </div> -->
+
+    <!-- <div class="image">
       <div class="row" style="display: flex">
         <div>
           <img
@@ -248,7 +364,7 @@
           />
         </div>
       </div>
-    </div>
+    </div> -->
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
