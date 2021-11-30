@@ -1,10 +1,27 @@
-<nav class="navbar">
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="../css/file.css" />
+  </head>
+  <body>
+    <nav class="navbar">
       <div class="container-fluid">
         <div class="navbar-header">
-          <a class="navbar-brand" href="#">3S Home</a>
+          <a class="navbar-brand" href="http://localhost:3000/landlord"
+            >3S Home</a
+          >
         </div>
         <ul class="nav navbar-nav">
-          <li class="active"><a href="http://localhost:3000/login">Home</a></li>
+          <li class="active">
+            <a href="http://localhost:3000/landlord">Home</a>
+          </li>
           <li class="dropdown">
             <a class="dropdown-toggle" data-toggle="dropdown" href="#"
               >HoChiMinh <span class="caret"></span
@@ -76,12 +93,12 @@
         </ul>
         <ul class="nav navbar-nav navbar-right">
           <li>
-            <a href="post.html"
+            <a href="http://localhost:3000/post"
               ><span class="glyphicon glyphicon-open"></span> post</a
             >
           </li>
           <li>
-            <a href="http://localhost:3000/login"
+            <a onclick="logout()" href="http://localhost:3000/logout"
               ><span class="glyphicon glyphicon-log-out"></span> logout</a
             >
           </li>
@@ -127,3 +144,10 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script>
+      const logout = () => {
+        localStorage.removeItem("user");
+      };
+    </script>
+  </body>
+</html>

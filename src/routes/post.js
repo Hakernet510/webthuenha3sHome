@@ -5,6 +5,9 @@ const postController = require('../app/controllers/PostController');
 
 //regiterController.index
 
-router.use('/', postController.index);
+router.post('/', postController);
+router.get('/', (req, res)=>{
+    res.render('post')
+});
 
 module.exports = router;

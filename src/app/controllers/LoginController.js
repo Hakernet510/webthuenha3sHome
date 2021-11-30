@@ -1,4 +1,5 @@
 const { db } = require("../../connect");
+const app = require('express')
 
 const loginController = async (req, res) => {
   console.log("req là: ", req.body);
@@ -11,21 +12,21 @@ const loginController = async (req, res) => {
   const resDB = await checkDB(req.body);
   if (resDB.length === 0) return res.json({ message: "fail" });
 
-  //main
+  const saveID = await getID(req.body);
 
-  //res
+  await insertID(saveID);
+
+  const R = await getRole(req.body);
+
   res.json({
     message: "success",
-    // result,
-    resDB,
-  });
+    user: resDB,
+    role: R.role
+  })
+
 };
 
 const checkInput = async (data) => {
-  console.log(
-    "🚀 ~ file: LoginController.js ~ line 23 ~ checkInput ~ data",
-    data
-  );
   if (!data) return false;
   if (!data.username) return false;
   if (!data.password) return false;
@@ -46,7 +47,45 @@ const checkDB = async (data) => {
     )
     .then(([rows]) => getResult(rows));
 
-  return result;
+  return result[0];
 };
+
+const getID = async (data) => {
+  var result = null;
+
+  const getResult = (rows) => (result = rows);
+
+  await db
+    .promise()
+    .query(
+      `SELECT id FROM landlords WHERE user_name= '${data.username}' AND password='${data.password}'`
+    )
+    .then(([rows]) => getResult(rows));
+
+  return result[0] ;
+}
+
+const insertID = async (data) => {
+  await db
+    .promise()
+    .query(
+      `INSERT INTO user (userID) VALUES ('${data.id}')`
+    )
+}
+
+  const getRole = async (data) => {
+    var result = null;
+
+    const getResult = (rows) => (result = rows);
+
+    await db
+      .promise()
+      .query(
+        `SELECT role FROM landlords WHERE user_name= '${data.username}' AND password='${data.password}'`
+      )
+      .then(([rows]) => getResult(rows));
+
+    return result[0] ;
+  }
 
 module.exports = loginController;

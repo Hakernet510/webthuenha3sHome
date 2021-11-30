@@ -1,19 +1,4 @@
 $(document).ready(() => {
-  // $('#formRegister').submit((event) => {
-  //     event.preventDefault();
-  //     console.log($('#formRegister').serialize());
-  //     $.post({
-  //         url: 'register',
-  //         dataType: 'json',
-  //         data: $('#formRegister').serialize(),
-  //         success: (res) => {
-  //             console.log("res", res);
-  //             $("#serverResponse").text(res.message);
-  //             if (res.message !== "success") return
-  //             resetForm("#formRegister")
-  //         }
-  //     });
-  // });
   $("#formLogin").submit((event) => {
     event.preventDefault();
 
@@ -32,23 +17,15 @@ $(document).ready(() => {
         $("#formLogin").trigger("reset");
         $("#loginResponse").text(res.message);
         if (res.message !== "success") return alert("đăng nhập thất bại");
-        // window.location.href = "/home"
+        localStorage.setItem('user', JSON.stringify(res.user) );
+        var a = JSON.parse(localStorage.getItem('user'));
+        console.log("🚀 ~ file: login.js ~ line 27 ~ $ ~ res", a.ID);
+        if (res.role == 0) {
+          window.location.href = "/landlord"
+        } else{
+          window.location.href = "/renter"
+        }
       },
     });
   });
-  // $('#formForgot').submit(function (event) {
-  //     event.preventDefault();
-  //     const passwordForgot = $("#passwordForgot").val();
-  //     const passwordConfirmForgot = $("#passwordConfirmForgot").val();
-  //     if (passwordForgot !== passwordConfirmForgot) return $("#serverResponse").text("Error : Password is not confirmed!");
-  //     $.post({
-  //         url: 'forgot',
-  //         dataType: 'json',
-  //         data: $('#formForgot').serialize(),
-  //         success: (res) => {
-  //             $("#serverResponse").text(res.message);
-  //             if (res.message !== "success") return
-  //             resetForm("#formForgot")
-  //         }
-  //     });
 });

@@ -1,13 +1,13 @@
 const express = require('express');
 const router = express.Router();
 
-const filterController = require('../app/controllers/FilterController');
+const detailController = require('../app/controllers/DetailController');
 
 //regiterController.index
 
-router.post('/', filterController);
+router.post('/', detailController);
 router.get('/', (req, res)=>{
-    res.render('filter')
+    res.render('detail')
 });
 
 module.exports = router;

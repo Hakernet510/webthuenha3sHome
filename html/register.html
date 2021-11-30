@@ -10,7 +10,8 @@
   <body class="Register">
     <div class="center">
       <h1>Register</h1>
-      <form method="post">
+      <h1 id="registerResponse" style="font-size: 16px; border-bottom: none;"></h1>
+      <form id="formRegister" method="post">
         <div class="field">
           <input type="text" required />
           <span></span>
@@ -38,8 +39,8 @@
         </div>
 
         <div class="wrapper">
-          <input type="radio" name="select" id="option-1" checked />
-          <input type="radio" name="select" id="option-2" />
+          <input type="radio" name="role" id="option-1" value="0"/>
+          <input type="radio" name="role" id="option-2" value="1"/>
           <label for="option-1" class="option option-1">
             <div class="dot"></div>
             <span>Landlord</span>
@@ -55,5 +56,7 @@
         
       </form>
     </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="../js/register.js"></script>
   </body>
 </html>

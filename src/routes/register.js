@@ -5,6 +5,9 @@ const registerController = require('../app/controllers/RegisterController');
 
 //regiterController.index
 
-router.use('/', registerController.index);
+router.post('/', registerController);
+router.get('/', (req, res)=>{
+    res.render('register')
+});
 
 module.exports = router;

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Post</title>
+    <link rel="stylesheet" href="../css/orther post.css" />
+  </head>
+  <body class="post">
+    <div class="center">
+      <h1>Postting</h1>
+      <h1 id="forgotResponse" style="font-size: 16px; border-bottom: none;"></h1>
+      <form id="formPost" method="post">
+        <h2>Thông tin cơ bản</h2>
+        <div class="form-group title field">
+          <label for="usr">Title</label>
+          <input class="input" type="text" name="title" class="form-control" id="usr">
+        </div>
+
+        <div class="basic">
+          <div class="input">
+            <div class="cate">
+            <span>Categories</span>
+            <select name="categories">
+              <option value="1">Cho thuê phòng trọ</option>
+              <option value="2">Tìm ở ghép</option>
+            </select>
+            </div>
+            <br>
+
+            <div class="dis">
+              <span>District</span>
+              <select name="district">
+                <option value="">Quận 1</option>
+                <option value="">Quận 2</option>
+                <option value="">Quận 3</option>
+                <option value="">Quận 4</option>
+                <option value="">Quận 5</option>
+                <option value="">Quận 6</option>
+                <option value="">Quận 7</option>
+                <option value="">Quận 8</option>
+                <option value="">Quận 9</option>
+                <option value="">Quận 10</option>
+                <option value="">Quận 11</option>
+                <option value="">Quận 12</option>
+              </select>
+            </div>
+
+            <br>
+            <div class="price">
+              <span>Price</span>
+              <input type="text" name="price" placeholder="Ex: If 2.5 milions VNĐ then type 2.5" required/>
+            </div>
+            
+            <br>
+            
+          
+            <br>
+
+            <br>
+          <div class="Address">
+            <span>Address</span>
+            <input class="address" name="address" type="text" required/>
+          </div>    
+        </div>
+            
+        <div class="input height">               
+            <div>
+              <span>City</span>
+              <select name="city">
+                <option value="HoChiMinh">HoChiMinh</option>
+                <option value="HaNoi">HaNoi</option>
+                <option value="DaNang">DaNang</option>
+              </select>
+            </div>
+
+            <br><br><br><br>
+
+            <div class="square">
+              <label>Area</label>
+              <input type="text" name="area" required/>
+              <span>m<sup>2</sup></span>
+            </div>
+            <br><br>
+
+            <br>
+            <div class="PriceUnit">
+              <span>Price Unit</span>
+              <select class="priceunit" name="priceUnit">
+                <option value="triệu/tháng">Triệu/tháng</option>
+                <option value="triệu/năm">Triệu/năm</option>
+              </select>
+            </div>
+       </div>
+        </div>
+
+        <div class="advance">
+          <h2>Thông tin mô tả</h2>
+          <div class="group">
+            <label for="pwd">Nội Dung Mô Tả</label>
+            <textarea class="form-control textarea" name="description" rows="5" id="comment"></textarea>
+          </div>
+        </div>
+
+        <div class="contact">
+          <h2>Thông tin liên hệ</h2>
+          <div>
+            <label for="">Tên liên hệ</label>
+            <input type="text" name="name" required/>
+          </div>
+          <div>
+            <label for="">Điện thoại</label>
+            <input type="text" name="phonenumber" required/>
+          </div>
+          <div>
+            <label for="">Email</label>
+            <input type="text" name="email" required/>
+          </div>
+        </div>
+  
+        <br />
+        <input class="submit" type="submit" value="Post">
+       
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="../js/post.js"></script>
+      </form>
+    </div>
+  </body>
+</html>
