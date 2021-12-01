@@ -1,21 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Post</title>
 
-    <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
-    />
-    <link rel="stylesheet" href="../css/home.css" />
-    <link rel="stylesheet" href="../css/other post.css" />
-  </head>
-
-  <body>
-    <div class="test">
       <nav class="navbar">
         <div class="container-fluid">
           <div class="navbar-header">
@@ -101,7 +84,7 @@
           </ul>
         </div>
       </nav>
-
+  
       <div class="center">
         <h1>Postting</h1>
         <form method="post">
@@ -146,7 +129,7 @@
               </div>
               <br />
 
-              <div class="city">
+              <div>
                 <span>City</span>
                 <select>
                   <option value="HoChiMinh">HoChiMinh</option>
@@ -156,7 +139,7 @@
               </div>
               <br />
 
-              <div class="district">
+              <div class="dis">
                 <span>District</span>
                 <select>
                   <option value="">Quận 1</option>
@@ -216,8 +199,8 @@
           <div class="advance">
             <h2>Thông tin mô tả</h2>
             <div class="group">
-              <!-- <label for="pwd">Nội Dung Mô Tả</label> -->
-              <textarea placeholder="Nội Dung Mô Tả"
+              <label for="pwd">Nội Dung Mô Tả</label>
+              <textarea
                 class="form-control textarea"
                 rows="5"
                 id="comment"
@@ -228,16 +211,16 @@
           <div class="contact">
             <h2>Thông tin liên hệ</h2>
             <div>
-              <label class="contact_label" for="contact_name">Tên liên hệ</label>
-              <input id="contact_name" type="text" placeholder="VD: Nguyễn Văn A" required />
+              <label for="">Tên liên hệ</label>
+              <input type="text" required />
             </div>
             <div>
-              <label class="contact_label" for="contact_phone">Điện thoại</label>
-              <input id="contact_phone" type="text" placeholder="+84" required />
+              <label for="">Điện thoại</label>
+              <input type="text" required />
             </div>
             <div>
-              <label class="contact_label" for="contact_email">Email</label>
-              <input id="contact_email" type="text" placeholder="abc@example.com" required />
+              <label for="">Email</label>
+              <input type="text" required />
             </div>
           </div>
 
@@ -252,8 +235,3 @@
         </div> -->
         </form>
       </div>
-    </div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-  </body>
-</html>

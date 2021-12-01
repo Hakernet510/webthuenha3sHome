@@ -111,35 +111,17 @@
     position: absolute;
     display: flex;
     flex-wrap: wrap;
-    
+    border-radius: 10px;
+    /* border: 1px solid; */
+    overflow: auto;
 }
 
-.post .left1{
+.post .left{
     /* background: #000; */
     border: 2px solid silver;
     display: inline-flex;
 }
 
-.post .right1{
-    display: inline-flex;
-
-    /* background: green; */
-    border: 2px solid silver;
-}
-
-.post .left2{
-    /* background: red; */
-    display: inline-flex;
-    border: 2px solid silver;
-
-}
-
-.post .right2{
-    /* background: blue; */
-    border: 2px solid silver;
-    display: inline-flex;
-
-}
 
 .item{
     width: 50%;
@@ -194,7 +176,7 @@
     margin-top: 15px;
 }
 
-.price span{
+.money span{
     background: #38a343;
     color: #fff;
     padding: 3px 8px;
