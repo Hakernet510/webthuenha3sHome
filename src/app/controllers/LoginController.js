@@ -14,6 +14,8 @@ const loginController = async (req, res) => {
 
   const saveID = await getID(req.body);
 
+  await create();
+
   await insertID(saveID);
 
   const R = await getRole(req.body);
@@ -63,6 +65,14 @@ const getID = async (data) => {
     .then(([rows]) => getResult(rows));
 
   return result[0] ;
+}
+
+const create = async () => {
+  await db
+    .promise()
+    .query(
+      `CREATE TABLE User (id int NOT NULL AUTO_INCREMENT,userID int NOT NULL,PRIMARY KEY (id))`
+    )
 }
 
 const insertID = async (data) => {

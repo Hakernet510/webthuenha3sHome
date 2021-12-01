@@ -7,7 +7,7 @@ const logoutController = require('../app/controllers/LogoutController');
 
 router.post('/', logoutController);
 router.get('/', (req, res)=>{
-    res.render('login')
+    res.render('login');
 });
 
 module.exports = router;

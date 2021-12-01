@@ -1,34 +1,17 @@
 const { db } = require("../../connect");
 const app = require('express')
 
-const logoutController = async (req, res) => {
+const logoutController = async () => {
 
-const ID = await getID();
-
-await deleteUser(ID);
+await deleteUser();
     
 }
 
-const getID = async () => {
-    var result = null;
-  
-    const getResult = (rows) => (result = rows);
-  
-    await db
-      .promise()
-      .query(
-        `SELECT id FROM user`
-      )
-      .then(([rows]) => getResult(rows));
-  
-    return result[0] ;
-  }
-
-const deleteUser = async (data) => {
+const deleteUser = async () => {
     await db
     .promise()
     .query(
-      `DELETE FROM user WHERE id = ${data.id};`
+      `drop table user`
     )
 }
 
