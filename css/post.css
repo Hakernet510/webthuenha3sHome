@@ -208,6 +208,22 @@ form .field {
   font-size: 18px;
 }
 
+.img{
+  width: 620px;
+  height: 30px;
+  /* position: relative; */
+}
+
+.img-file{
+  /* border: 1px dashed #000; */
+  width: 600px;
+  height: 100%;
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  margin-top: 5px;
+}
+
 .contact {
   width: 620px;
   height: 230px;
@@ -238,7 +254,7 @@ form .field {
   font-size: 18px;
   color: #e9f4fb;
   font-weight: 700;
-  margin-top: 30px;
+  margin-top: 15px;
   left: 50%;
   transform: translateX(-50%);
 }
