@@ -10,11 +10,13 @@ const postController = async (req, res) => {
   // const resInput = await checkInput(req.body);
   // if (!resInput) return res.json({ message: "fail" });
 
-  var a = localStorage.getItem('user');
+  var user = localStorage.getItem('user');
+
+  await insertDB(JSON.parse(user));
 
   res.json({
     message: "success",
-    user: a
+    user: JSON.parse(user)
   });
 };
 

@@ -17,7 +17,7 @@ $(document).ready(() => {
           $("#formPost").trigger("reset");
           $("#postResponse").text(res.message);
           if (res.message !== "success") return alert("đăng thất bại");
-          window.location.href = "/landlord"
+          // window.location.href = "/landlord"
         },
       });
     });

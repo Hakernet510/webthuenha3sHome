@@ -1,5 +1,9 @@
 const { db } = require("../../connect");
-const app = require('express')
+const app = require("express");
+if (typeof localStorage === "undefined" || localStorage === null) {
+  var LocalStorage = require("node-localstorage").LocalStorage;
+  localStorage = new LocalStorage("./scratch");
+}
 
 const loginController = async (req, res) => {
   console.log("req là: ", req.body);
@@ -14,18 +18,17 @@ const loginController = async (req, res) => {
 
   const saveID = await getID(req.body);
 
-  await create();
-
-  await insertID(saveID);
-
   const R = await getRole(req.body);
+
+  localStorage.setItem("user", JSON.stringify(resDB));
+
+  console.log("abc", localStorage.getItem("user"));
 
   res.json({
     message: "success",
     user: resDB,
-    role: R.role
-  })
-
+    role: R.role,
+  });
 };
 
 const checkInput = async (data) => {
@@ -45,11 +48,11 @@ const checkDB = async (data) => {
   await db
     .promise()
     .query(
-      `SELECT * FROM landlords WHERE user_name= '${data.username}' AND password='${data.password}'`
+      `SELECT id, name, user_name, role, phone_number FROM landlords WHERE user_name= '${data.username}' AND password='${data.password}'`
     )
     .then(([rows]) => getResult(rows));
 
-  return result[0];
+  return result;
 };
 
 const getID = async (data) => {
@@ -64,38 +67,22 @@ const getID = async (data) => {
     )
     .then(([rows]) => getResult(rows));
 
-  return result[0] ;
-}
+  return result[0];
+};
 
-const create = async () => {
+const getRole = async (data) => {
+  var result = null;
+
+  const getResult = (rows) => (result = rows);
+
   await db
     .promise()
     .query(
-      `CREATE TABLE User (id int NOT NULL AUTO_INCREMENT,userID int NOT NULL,PRIMARY KEY (id))`
+      `SELECT role FROM landlords WHERE user_name= '${data.username}' AND password='${data.password}'`
     )
-}
+    .then(([rows]) => getResult(rows));
 
-const insertID = async (data) => {
-  await db
-    .promise()
-    .query(
-      `INSERT INTO user (userID) VALUES ('${data.id}')`
-    )
-}
-
-  const getRole = async (data) => {
-    var result = null;
-
-    const getResult = (rows) => (result = rows);
-
-    await db
-      .promise()
-      .query(
-        `SELECT role FROM landlords WHERE user_name= '${data.username}' AND password='${data.password}'`
-      )
-      .then(([rows]) => getResult(rows));
-
-    return result[0] ;
-  }
+  return result[0];
+};
 
 module.exports = loginController;

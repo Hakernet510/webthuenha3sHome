@@ -7,7 +7,6 @@ const landlordController = require('./landlord')
 const forgotController = require('./forgot')
 const detailController = require('./detail')
 const manageController = require('./manage')
-const logoutController = require('./logout')
 
 function route(app) {
 
@@ -29,7 +28,6 @@ function route(app) {
 
     app.use('/manage', manageController)
 
-    app.use('/logout', logoutController)
 }
 
 module.exports = route;

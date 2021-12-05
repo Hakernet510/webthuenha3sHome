@@ -9,6 +9,7 @@
       href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
     />
     <link rel="stylesheet" href="../css/landlord.css" />
+    <link rel="stylesheet" href="../css/home.css" />
   </head>
   <body>
     <nav class="navbar">
@@ -17,7 +18,7 @@
           <a class="navbar-brand" href="#">3S Home</a>
         </div>
         <ul class="nav navbar-nav">
-          <li class="active"><a href="../html/home.html">Home</a></li>
+          <li class="active"><a href="http://localhost:3000/landlord">Home</a></li>
           <li class="dropdown">
             <a class="dropdown-toggle" data-toggle="dropdown" href="#"
               >HoChiMinh <span class="caret"></span
@@ -89,12 +90,12 @@
         </ul>
         <ul class="nav navbar-nav navbar-right">
           <li>
-            <a href="post.html"
+            <a href="http://localhost:3000/post"
               ><span class="glyphicon glyphicon-open"></span> post</a
             >
           </li>
           <li>
-            <a href="home.html"
+            <a href="http://localhost:3000/logout"
               ><span class="glyphicon glyphicon-log-out"></span> logout</a
             >
           </li>
@@ -102,43 +103,91 @@
       </div>
     </nav>
 
-    <div class="container">
-      <div class="row" style="display: flex">
-        <div>
-          <img
-            src="../image/hcm.png"
-            alt="HoChiMinh"
-            style="width: 400px; height: 200px; margin-right: 15px"
-          />
-        </div>
-        <div>
-          <img
-            src="../image/danang.png"
-            alt="HoChiMinh"
-            style="
-              width: 400px;
-              height: 200px;
-              margin-left: 15px;
-              margin-right: 15px;
-            "
-          />
-        </div>
-        <div>
-          <img
-            src="../image/hanoi.png"
-            alt="HoChiMinh"
-            style="
-              width: 400px;
-              height: 200px;
-              margin-left: 15px;
-              margin-right: 15px;
-            "
-          />
+    <div class="search">
+      <div class="box">
+        <h4>Quick Search</h4>
+        <div class="bs-content">
+          <div class="searchbar">
+            <div class="select">
+              <select>
+                <option value="0">--Information of room--</option>
+                <option value="1">Cho thuê phòng trọ</option>
+                <option value="11">Cho thuê căn hộ</option>
+                <option value="2">Cho thuê nhà nguyên căn</option>
+                <option value="3">Tìm người ở ghép</option>
+              </select>
+            </div>
+            <div class="select">
+              <select>
+                <option value="">--City--</option>
+                <option value="SG">HoChiMinh</option>
+                <option value="HN">HaNoi</option>
+                <option value="DN">DaNang</option>
+              </select>
+            </div>
+            <div class="select">
+              <select>
+                <option value="">--District--</option>
+                <option value="72">Bình Chánh</option>
+                <option value="65">Bình Tân</option>
+                <option value="66">Bình Thạnh</option>
+                <option value="73">Cần Giờ</option>
+                <option value="74">Củ Chi</option>
+                <option value="67">Gò Vấp</option>
+                <option value="75">Hóc Môn</option>
+                <option value="76">Nhà Bè</option>
+                <option value="68">Phú Nhuận</option>
+                <option value="53">Quận 1</option>
+                <option value="62">Quận 10</option>
+                <option value="63">Quận 11</option>
+                <option value="64">Quận 12</option>
+                <option value="54">Quận 2</option>
+                <option value="55">Quận 3</option>
+                <option value="56">Quận 4</option>
+                <option value="57">Quận 5</option>
+                <option value="58">Quận 6</option>
+                <option value="59">Quận 7</option>
+                <option value="60">Quận 8</option>
+                <option value="61">Quận 9</option>
+                <option value="69">Tân Bình</option>
+                <option value="70">Tân Phú</option>
+                <option value="71">Thủ Đức</option>
+              </select>
+            </div>
+            <div class="select">
+              <select>
+                <option value="0">--Price--</option>
+                <option value="1">Thỏa thuận</option>
+                <option value="2">Dưới 1 triệu</option>
+                <option value="3">1 triệu - 2 triệu</option>
+                <option value="4">2 triệu - 3 triệu</option>
+              </select>
+            </div>
+            <div class="select">
+              <select>
+                <option value="0">Area</option>
+                <option value="1">Chưa xác định</option>
+                <!-- <option value="2"><15m2</option> -->
+                <option value="3">20 m2</option>
+                <option value="4">20 - 30 m2</option>
+                <option value="5">Trên 50 m2</option>
+              </select>
+            </div>
+
+            <div class="submit">
+              <input type="submit" value="Search" style="width: 100%" />
+            </div>
+          </div>
         </div>
       </div>
+
+      <div class="post" id="post_parent"></div>
+    
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="../js/a.js"></script>
+
   </body>
 </html>
