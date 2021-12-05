@@ -200,7 +200,11 @@
     margin-top: 15px;
 }
 
-.money span{
+.money i{
+    font-size: 20px;
+}
+
+.money b{
     background: #2691d9;
     color: #fff;
     padding: 3px 8px;

@@ -15,7 +15,10 @@ $(document).ready(() => {
             </h4>
 
             <div class="area">
-              <span><i class="fa fa-area-chart"></i> <b>50 m²</b></span>          
+              <span>
+              <i class="fa fa-area-chart"></i>
+               <b>50 m²</b>
+              </span>          
             </div>
 
             <div class="location">
@@ -26,12 +29,15 @@ $(document).ready(() => {
           </div>
 
           <div class="money">
-            <span>3.8 Triệu/tháng</span>
+            <span>
+            <i class="fa fa-money"></i>
+            <b>3.8 Triệu/tháng</b>
+            </span>
           </div>
 
           <div class="contact">
             <span>
-            <i  class="glyphicon glyphicon-user"></i> 
+            <i class="glyphicon glyphicon-user"></i> 
             <b>Liên hệ: Nguyễn Văn A - 0909666999</b>
             </span>
           </div>
