@@ -6,7 +6,7 @@ $(document).ready(() => {
   $.each(a, (index, value) => {
     var children = ` <div class="left item" id="left1">
         <div class="img">
-          <img class="picture" src="../image/thuduc.jpg" alt="error">
+          <img class="picture" src="../image/hanoi3.jpg" alt="error">
         </div>
 
         <div class="text">
@@ -35,12 +35,27 @@ $(document).ready(() => {
             </span>
           </div>
 
+          <div class="rent">
+            <span>
+            <i class="fa fa-navicon"></i>
+            <b>Cho thuê phòng trọ</b>
+            </span>
+          </div>
+
           <div class="contact">
             <span>
             <i class="glyphicon glyphicon-user"></i> 
             <b>Liên hệ: Nguyễn Văn A - 0909666999</b>
             </span>
           </div>
+
+          <div class="mail">
+          <span>
+            <i class="glyphicon glyphicon-envelope"></i> 
+            <b>Email: nguyenvana@gmail.com</b>
+          </span>
+          </div>
+
 
 
 

@@ -47,7 +47,11 @@
 .search{
     display: flex;
     border-radius: 10px;
-    
+}
+
+select{
+    outline: none;
+    border: none;
 }
 
 .searchbar{
@@ -122,7 +126,8 @@
     /* background: #000; */
     border: 2px solid silver;
     display: inline-flex;
-}
+    margin-bottom: 1em;
+} 
 
 
 .item{
@@ -136,19 +141,14 @@
     display: block;
     width: auto;
     height: 100%;
-    
+    margin-left: 10px;
 }
 
-.img picture{
-    size: 325px;
+.img .picture{
     width: 100%;
-    background-image: none;
-    /* background-repeat: no-repeat; */
-    /* background-position: center center; */
-    background-size: cover;
+    height: 100%;
     display: block;
-
-    
+    object-fit: cover;
 }
 
 
@@ -160,7 +160,7 @@
     box-sizing: border-box;
     width: calc(100% - 165px);
     font-size: 14px;
-    padding: 20px 0 20px 20px;
+    padding: 10px 0 0 15px;
 }
 
 .text span{
@@ -216,12 +216,26 @@
     font-weight: 700;
 }
 
-.contact{
-    height: 30px;
+.rent{
     margin-top: 15px;
 }
 
+.contact{
+    height: 30px;
+    margin-top: 20px;
+}
+
 .contact span{
+    font-size: 14px;
+    color: #000;
+}
+
+.mail{
+    height: 30px;
+    margin-top: 10px;
+}
+
+.mail span{
     font-size: 14px;
     color: #000;
 }
