@@ -3,7 +3,8 @@
     padding: 0;
     font-family: inherit;
     background:  linear-gradient(350deg, #5ca0f2 0%, #f5f7f6 70%);
-    height: 100vh;
+    min-height: 100vh;
+    height: auto;
     overflow: hidden;
     position: relative;
 }
@@ -160,7 +161,7 @@ select{
     box-sizing: border-box;
     width: calc(100% - 165px);
     font-size: 14px;
-    padding: 10px 0 0 15px;
+    padding: 5px 0 0 15px;
 }
 
 .text span{
