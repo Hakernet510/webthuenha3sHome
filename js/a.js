@@ -6,36 +6,45 @@ $(document).ready(() => {
   $.each(a, (index, value) => {
     var children = ` <div class="left item" id="left1">
         <div class="img">
-          <img class="picture" src="../image/thuduc.jpg" alt="nhà thủ đức">
+          <img class="picture" src="../image/thuduc.jpg" alt="error">
         </div>
 
         <div class="text">
-            <h4>Phòng trọ cao cấp Thủ Đức</h4>
-            <div>
-              <span><i></i> <b>33 m²</b></span> 
-              <span class="rating" style="color: #fc0">
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-             </span>
+            <h4 class="title">
+              <a title="Phòng trọ cao cấp quận Thủ Đức">Phòng trọ cao cấp quận Thủ Đức</a>
+            </h4>
+
+            <div class="area">
+              <span><i class="fa fa-area-chart"></i> <b>50 m²</b></span>          
             </div>
 
-            <div class="localtion">
-              <span> <b><a>Thủ Đức, Hồ Chí Minh</a></b></span>
+            <div class="location">
+              <span> 
+              <i class="glyphicon glyphicon-map-marker"></i>
+              <b>321, Bác Ái, Thủ Đức, Hồ Chí Minh</b>
+              </span>
           </div>
 
           <div class="money">
             <span>3.8 Triệu/tháng</span>
           </div>
-        </div>       
+
+          <div class="contact">
+            <span>
+            <i  class="glyphicon glyphicon-user"></i> 
+            <b>Liên hệ: Nguyễn Văn A - 0909666999</b>
+            </span>
+          </div>
+
+
+
+        </div>     
+          
     </div>`;
 
-    $("#post_parent").append(children)
+    $("#post_parent").append(children);
   });
 });
-
 
 // const displayProduct = (productInfor) => {
 //     console.log(productInfor);

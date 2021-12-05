@@ -1,7 +1,7 @@
 .home{
     margin: 0;
     padding: 0;
-    font-family: sans-serif;
+    font-family: inherit;
     background:  linear-gradient(350deg, #5ca0f2 0%, #f5f7f6 70%);
     height: 100vh;
     overflow: hidden;
@@ -31,7 +31,8 @@
     transform: translate(-50%, -50%);
     width: 1500px;
     height: 800px;
-    background: #f5f5f5;
+    /* background: #f5f5f5; */
+    background: #f0f0f0;
     border-radius: 10px;
     margin: 0 auto;
 }
@@ -131,15 +132,21 @@
 .img{
     width: 50%;
     height: 100%;
+    display: block;
+    width: auto;
+    height: 100%;
+    
 }
 
 .img picture{
     size: 325px;
-    position: absolute;
+    width: 100%;
     background-image: none;
     /* background-repeat: no-repeat; */
-    background-position: center center;
+    /* background-position: center center; */
     background-size: cover;
+    display: block;
+
     
 }
 
@@ -148,19 +155,32 @@
     width: 50%;
     height: 100%;
     /* text-align: center; */
-    padding-left: 15px;
     float: left;
     box-sizing: border-box;
     width: calc(100% - 165px);
-    /* margin-top: 15px; */
+    font-size: 14px;
+    padding: 20px 0 20px 20px;
 }
 
 .text span{
     margin-left: 10px;
 }
 
-.localtion{
+.title a{
+    text-decoration: none;
+}
+
+.area{
+    height: 30px;
+}
+
+.location{
+    height: 30px;
     margin-top: 15px;
+}
+
+.localtion span{
+    font-size: 15px;
 }
 
 .text .price{
@@ -173,14 +193,30 @@
     border-radius: 4px;
     font-size: 13px;
     font-weight: 700;
+}
+
+.money{
+    height: 30px;
     margin-top: 15px;
 }
 
 .money span{
-    background: #38a343;
+    background: #2691d9;
     color: #fff;
     padding: 3px 8px;
+    width: 100%;
+    height: 20px;
     border-radius: 4px;
-    font-size: 13px;
+    font-size: 14px;
     font-weight: 700;
+}
+
+.contact{
+    height: 30px;
+    margin-top: 15px;
+}
+
+.contact span{
+    font-size: 14px;
+    color: #000;
 }

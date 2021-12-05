@@ -1,69 +1,286 @@
-.City{
-    width: 223px;
-    height: 30px;
+.post {
+  /* margin: 0;
+  padding: 0; */
+  font-family: sans-serif;
+  background: linear-gradient(350deg, #5ca0f2 0%, #f5f7f6 70%);
+  height: 1000px;
+  width: 100%;
+
+  /* height: auto; */
 }
 
-.District{
-    width: 223px;
-    height: 30px;
+.navbar {
+  background-color: linear-gradient(315deg, #5ca0f2 0%, #f5f7f6 70%);
 }
 
-.Wards{
-    width: 223px;
-    height: 30px;
+* {
+  margin: 0;
+  padding: 0;
+  border: none;
 }
 
-.Street{
-    width: 223px;
-    height: 30px;
+.input {
+  outline: none !important;
 }
 
-.input{
-    width: 991px;
-    height: 34px;
+.test {
+  font-family: sans-serif;
+  width: 100%;
+  min-height: 100vh;
+  height: auto;
+  background: linear-gradient(350deg, #5ca0f2 0%, #f5f7f6 70%);
+  /* background-color:red; */
+  margin: 0;
+  padding: 10px 0;
 }
 
-.textarea{
-    border: 5px;
-    width: 991px;
+.center {
+  width: 700px;
+  height: 1100px;
+  background: #f0f0f0;
+  border-radius: 10px;
+  margin: 50px auto;
 }
 
-.form1{
-    position: relative;
-    width: 1021px;
-    height: 1100px;
-    /* background: #F5F5F5; */
-    display: flex;
-    flex-wrap: wrap;
-    margin: 0 auto;
+.center h1 {
+  text-align: center;
+  padding: 10px 0 0 0;
 }
 
-.categories{
-    width: 480px;
-    height: 70px;
-    position: relative;
-    margin: 5em 0 0 0;
-    left: -14.5em;
-    /* top: 5em ; */
+.center form {
+  padding: 0 40px;
+  box-sizing: border-box;
+  margin: 0 auto;
 }
 
-.img{
-    width: 991px;
-    height: 181px;
-    position: relative;
+form .field {
+  margin: 30px 0;
 }
 
-.img-file{
-    border: 1px dashed #000;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    /* background: #000; */
+.field input {
+  width: 610px;
+  padding: 0 5px;
+  height: 40px;
+  font-size: 16px;
+  border: none;
+  background: none;
+  outline: none;
+  background: #ffffff;
 }
 
-.drop{
-    display: flex;
-    flex-wrap: wrap;
+.field label {
+  top: 50%;
+  left: 10px;
+  color: #2691d9;
+  font-size: 16px;
+}
+
+.area {
+  width: 500ox;
+}
+
+.area span {
+  width: 40px;
+}
+
+.label {
+  width: 130px;
+  text-align: center;
+}
+
+.basic {
+  width: 100%;
+  height: 380px;
+  display: flex;
+  color: #2691d9;
+  border-radius: 10px;
+}
+
+
+.basic select {
+  width: 300px;
+  height: 30px;
+  margin: 5px 0;
+  text-align: center;
+  display: flex;
+  font-size: 14px;
+}
+
+
+.left {
+  flex-wrap: wrap;
+  display: flex;
+  margin: 5px 0;
+  width: 50%;
+  height: 400px;
+}
+
+.left select{
+  color: #000;
+}
+
+.cate {
+  font-size: 16px;
+}
+
+.city{
+  font-size: 16px;
+}
+
+.district {
+  font-size: 16px;
+}
+
+.PriceUnit {
+  font-size: 16px;
+}
+
+.right {
+  width: 50%;
+  height: 400px;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 5px 0;
+}
+
+.square {
+  width: 300px;
+  font-size: 16px;
+}
+
+.square input {
+  width: 300px;
+  height: 30px;
+  font-size: 14px;
+  color: #000;
+  /* <span class="m2">m<sup>2</sup></span>; */
+
+}
+
+.address {
+  width: 500px;
+  font-size: 16px;
+}
+
+.address input {
+  width: 300px;
+  height: 30px;
+}
+
+.price {
+  width: 300px;
+  font-size: 16px;
+}
+
+.price input {
+  width: 300px;
+  height: 30px;
+  font-size: 14px;
+}
+
+.price :placeholder-shown {
+  font-size: 14px;
+}
+
+.street {
+  font-size: 16px;
+}
+
+.street input {
+  width: 300px;
+  height: 30px;
+  font-size: 14px;
+}
+
+.advance {
+  color: #000;
+}
+
+.advance .group {
+  /* color: #2691d9; */
+  font-size: 16px;
+}
+
+.advance textarea {
+  border: 5px;
+  width: 610px;
+  height: 65px;
+  font-size: 18px;
+}
+
+.contact {
+  width: 620px;
+  height: 230px;
+  font-size: 16px;
+  color: #2691d9;
+}
+
+.contact_label {
+  margin-top: 3px;
+}
+
+.contact input {
+  width: 610px;
+  height: 30px;
+  font-size: 15px;
+  border-radius: 5px;
+  color: #000;
+  /* border: 1px solid; */
+}
+
+.submit {
+  position: relative;
+  width: 300px;
+  height: 50px;
+  /* border: 1px solid; */
+  background: #2691d9;
+  border-radius: 25px;
+  font-size: 18px;
+  color: #e9f4fb;
+  font-weight: 700;
+  margin-top: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.cate,
+.square,
+.city,
+.address,
+.district,
+.price,
+.PriceUnit,
+.street {
+  height: 100px;
+}
+
+.cate select,
+.square input,
+.city select,
+.address input,
+.district select,
+.price input,
+.PriceUnit select,
+.street input{
+  margin-top: 10px;
+  padding-left: 10px;
+}
+
+.cate select:focus,
+.square input:focus,
+.city select:focus,
+.address input:focus,
+.district select:focus,
+.price input:focus,
+.PriceUnit select:focus,
+.street input:focus{
+  outline: none;
+}
+
+.contact input{
+  padding-left: 10px;
+}
+
+.contact input:focus{
+  outline: none;
 }
