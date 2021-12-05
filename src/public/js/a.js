@@ -8,22 +8,13 @@ const getHostels = async () => {
   var result = null;
 
   const getResult = (data) => {
-    console.log("🚀 ~ file: a.js ~ line 13 ~ getResult ~ data", data);
     result = data;
-    console.log("🚀 ~ file: a.js ~ line 33 ~ getHostels ~ result", result);
   };
 
   await $.get({
     url: "landlord/api",
     dataType: "json",
-    // data: $("#formLogin").serialize(),
     success: (res) => {
-      console.log(
-        "🚀 ~ file: a.js ~ line 15 ~ getHostels ~ res",
-        res,
-        res.hostels
-      );
-      console.log("🚀 ~ file: a.js ~ line 18 ~ getHostels ~ result", result);
       getResult(res);
     },
   });
