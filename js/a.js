@@ -4,9 +4,10 @@ $(document).ready(() => {
   $("#post_parent").html(``);
 
   $.each(a, (index, value) => {
-    var children = ` <div class="left item" id="left1">
+    var children = ` 
+    <div class="left item" id="left1">
         <div class="img">
-          <img class="picture" src="../image/hanoi3.jpg" alt="error">
+          <img class="picture" src="../image/quan7-2.jpg" alt="error">
         </div>
 
         <div class="text">
@@ -55,12 +56,7 @@ $(document).ready(() => {
             <b>Email: nguyenvana@gmail.com</b>
           </span>
           </div>
-
-
-
-
-        </div>     
-          
+        </div>           
     </div>`;
 
     $("#post_parent").append(children);
