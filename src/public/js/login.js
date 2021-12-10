@@ -17,7 +17,6 @@ $(document).ready(() => {
         $("#formLogin").trigger("reset");
         $("#loginResponse").text(res.message);
         if (res.message !== "success") return alert("đăng nhập thất bại");
-        localStorage.setItem('user', JSON.stringify(res.user) );
         var a = JSON.parse(localStorage.getItem('user'));
         console.log("🚀 ~ file: login.js ~ line 27 ~ $ ~ res", a.ID);
         if (res.role == 0) {

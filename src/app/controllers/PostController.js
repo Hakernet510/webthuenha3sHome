@@ -1,4 +1,6 @@
 const { db } = require("../../connect");
+const multer = require('multer');
+
 if (typeof localStorage === "undefined" || localStorage === null) {
   var LocalStorage = require('node-localstorage').LocalStorage;
   localStorage = new LocalStorage('./scratch');
@@ -10,13 +12,22 @@ const postController = async (req, res) => {
   // const resInput = await checkInput(req.body);
   // if (!resInput) return res.json({ message: "fail" });
 
-  var user = localStorage.getItem('user');
+  upload(req, res, (err) => {
+    if(err) {
+      console.log("fail");
+    } else {
+      console.log(req.file);
+    }
+  });
 
-  await insertDB(JSON.parse(user));
+  var user = localStorage.getItem('user');
+  // await insertDB(JSON.parse(user));
+
 
   res.json({
     message: "success",
-    user: JSON.parse(user)
+    user: JSON.parse(user),
+    url
   });
 };
 
@@ -25,26 +36,29 @@ const checkInput = async (data) => {
   return true;
 };
 
-const checkDB = async (data) => {
-  var result = null;
+let url;
 
-  const getResult = (rows) => (result = rows);
+const storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+      cb(null, '../../public/image');
+  },
+  filename: function (req, file, cb) {
+    console.log(req.file);
+    url = Date.now() + '.png';
 
-  await db
-    .promise()
-    .query(
-      `SELECT * FROM landlords WHERE user_name= '${data.username}' AND password='${data.password}'`
-    )
-    .then(([rows]) => getResult(rows));
-  return result;
-};
+    cb(null, url);
+  }
+});
+
+const upload = multer({ storage: storage }).single('image');
 
 const insertDB = async (data) => {
   const userLocal = JSON.parse(localStorage.getItem("user"));
+  const imageLocal = JSON.parse(localStorage.getItem("image"));
   await db
     .promise()
     .query(
-      `insert into hostels (lanlord_id,Title,Category,description,name,email,phone_number,address,street,district,city,area,price) values (${userLocal.id},'${data.tile}', '${data.categories}', '${data.description}', '${data.name}', '${data.email}', '${data.phonenumber}', '${data.address}', '${data.street}', '${data.district}', '${data.city}', '${data.area}', '${data.price} ${data.piceUnit}')`
+      `insert into hostels (lanlord_id,Title,Category,description,name,email,phone_number,address,street,district,city,area,price,priceUnit,url) values (${userLocal.id},'${data.title}', '${data.category}', '${data.description}', '${data.name}', '${data.email}', '${data.phonenumber}', '${data.address}', '${data.street}', '${data.district}', '${data.city}', '${data.area}', '${data.price}', '${data.piceUnit}', '${imageLocal.url}')`
     );
 };
 

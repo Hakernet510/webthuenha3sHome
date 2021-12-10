@@ -1,9 +1,10 @@
 .home{
     margin: 0;
     padding: 0;
-    font-family: sans-serif;
+    font-family: inherit;
     background:  linear-gradient(350deg, #5ca0f2 0%, #f5f7f6 70%);
-    height: 100vh;
+    min-height: 100vh;
+    height: auto;
     overflow: hidden;
     position: relative;
 }
@@ -31,9 +32,10 @@
     transform: translate(-50%, -50%);
     width: 1500px;
     height: 800px;
-    background: #f5f5f5;
+    /* background: #f5f5f5; */
+    background: #f0f0f0;
     border-radius: 10px;
-    margin: 40px;
+    margin: auto auto;
 }
 
 .search h4{
@@ -46,7 +48,11 @@
 .search{
     display: flex;
     border-radius: 10px;
-    
+}
+
+select{
+    outline: none;
+    border: none;
 }
 
 .searchbar{
@@ -114,13 +120,15 @@
     border-radius: 10px;
     /* border: 1px solid; */
     overflow: auto;
+    scroll-behavior: smooth;
 }
 
 .post .left{
     /* background: #000; */
     border: 2px solid silver;
     display: inline-flex;
-}
+    margin-bottom: 1em;
+} 
 
 
 .item{
@@ -131,16 +139,17 @@
 .img{
     width: 50%;
     height: 100%;
+    display: block;
+    width: auto;
+    height: 100%;
+    margin-left: 10px;
 }
 
-.img picture{
-    size: 325px;
-    position: absolute;
-    background-image: none;
-    /* background-repeat: no-repeat; */
-    background-position: center center;
-    background-size: cover;
-    
+.img .picture{
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
 }
 
 
@@ -148,19 +157,32 @@
     width: 50%;
     height: 100%;
     /* text-align: center; */
-    padding-left: 15px;
     float: left;
     box-sizing: border-box;
     width: calc(100% - 165px);
-    /* margin-top: 15px; */
+    font-size: 14px;
+    padding: 5px 0 0 15px;
 }
 
 .text span{
     margin-left: 10px;
 }
 
-.localtion{
+.title a{
+    text-decoration: none;
+}
+
+.area{
+    height: 30px;
+}
+
+.location{
+    height: 30px;
     margin-top: 15px;
+}
+
+.localtion span{
+    font-size: 15px;
 }
 
 .text .price{
@@ -173,14 +195,48 @@
     border-radius: 4px;
     font-size: 13px;
     font-weight: 700;
+}
+
+.money{
+    height: 30px;
     margin-top: 15px;
 }
 
-.money span{
-    background: #38a343;
+.money i{
+    font-size: 20px;
+}
+
+.money b{
+    background: #2691d9;
     color: #fff;
     padding: 3px 8px;
+    width: 100%;
+    height: 20px;
     border-radius: 4px;
-    font-size: 13px;
+    font-size: 14px;
     font-weight: 700;
+}
+
+.rent{
+    margin-top: 15px;
+}
+
+.contact{
+    height: 30px;
+    margin-top: 20px;
+}
+
+.contact span{
+    font-size: 14px;
+    color: #000;
+}
+
+.mail{
+    height: 30px;
+    margin-top: 10px;
+}
+
+.mail span{
+    font-size: 14px;
+    color: #000;
 }

@@ -1,7 +1,15 @@
 const { db } = require("../../connect");
 const app = require("express");
 
-const filterController = async (req, res) => {};
+const filterController = async (req, res) => {
+
+  // const hostels = getHostels(req.body);
+
+  res.json({
+    message: "success",
+    hostels
+  })
+};
 
 const getHostels = async (data) => {
   var result = null;

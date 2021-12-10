@@ -6,7 +6,6 @@ $(document).ready(() => {
         "🚀 ~ file: post.js ~ line 21 ~ $ ~ $(`#formPost`).serialize()",
         $("#formPost").serialize()
       );
-      $("#postResponse").text("Waiting for post...");
   
       $.post({
         url: "post",
@@ -15,9 +14,9 @@ $(document).ready(() => {
         success: (res) => {
           console.log("🚀 ~ file: post.js ~ line 27 ~ $ ~ res", res);
           $("#formPost").trigger("reset");
-          $("#postResponse").text(res.message);
           if (res.message !== "success") return alert("đăng thất bại");
-          // window.location.href = "/landlord"
+          localStorage.removeItem('image');
+          // window.location.href = "/landlord";
         },
       });
     });
