@@ -6,7 +6,6 @@ const filterController = require("../app/controllers/FilterController");
 
 //homeController.index
 
-router.post("/", filterController);
 router.get("/api", landlordController);
 router.get("/", (req, res) => {
   res.render("landlord");

@@ -1,5 +1,4 @@
 const { db } = require("../../connect");
-const multer = require('multer');
 
 if (typeof localStorage === "undefined" || localStorage === null) {
   var LocalStorage = require('node-localstorage').LocalStorage;
@@ -12,22 +11,13 @@ const postController = async (req, res) => {
   // const resInput = await checkInput(req.body);
   // if (!resInput) return res.json({ message: "fail" });
 
-  upload(req, res, (err) => {
-    if(err) {
-      console.log("fail");
-    } else {
-      console.log(req.file);
-    }
-  });
-
   var user = localStorage.getItem('user');
   // await insertDB(JSON.parse(user));
 
 
   res.json({
     message: "success",
-    user: JSON.parse(user),
-    url
+    user: JSON.parse(user)
   });
 };
 
@@ -36,25 +26,8 @@ const checkInput = async (data) => {
   return true;
 };
 
-let url;
-
-const storage = multer.diskStorage({
-  destination: function (req, file, cb) {
-      cb(null, '../../public/image');
-  },
-  filename: function (req, file, cb) {
-    console.log(req.file);
-    url = Date.now() + '.png';
-
-    cb(null, url);
-  }
-});
-
-const upload = multer({ storage: storage }).single('image');
-
 const insertDB = async (data) => {
   const userLocal = JSON.parse(localStorage.getItem("user"));
-  const imageLocal = JSON.parse(localStorage.getItem("image"));
   await db
     .promise()
     .query(
