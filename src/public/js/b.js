@@ -26,7 +26,7 @@ const loadData = async (hostelList) => {
   console.log("🚀 ~ file: a.js ~ line 5 ~ $ ~ hostelList", hostelList);
 
   $("#post_parent").html(``);
-
+  
   $.each(hostelList.hostels, (index, value) => {
     const {
       hostel_id,

@@ -108,6 +108,7 @@
     </nav>
 
     <div class="search">
+            <form method="POST">
       <div class="box">
         <h4>Quick Search</h4>
         <div class="bs-content">
@@ -122,56 +123,28 @@
               </select>
             </div>
             <div class="select">
-              <select>
+              <select id="city">
                 <option value="">--City--</option>
-                <option value="Hồ Chí Minh">Hồ Chí Minh</option>
-                <option value="Hà Nội">Hà Nội</option>
-                <option value="Đà Nẵng">Đà Nẵng</option>
+                <option value="1">Hồ Chí Minh</option>
+                <option value="2">Hà Nội</option>
+                <option value="3">Đà Nẵng</option>
+                <option value="4">Nghệ An</option>
               </select>
             </div>
             <div class="select">
-              <select>
+              <select id="district">
                 <option value="">--District--</option>
-                <option value="72">Bình Chánh</option>
-                <option value="65">Bình Tân</option>
-                <option value="66">Bình Thạnh</option>
-                <option value="73">Cần Giờ</option>
-                <option value="74">Củ Chi</option>
-                <option value="67">Gò Vấp</option>
-                <option value="75">Hóc Môn</option>
-                <option value="76">Nhà Bè</option>
-                <option value="68">Phú Nhuận</option>
-                <option value="53">Quận 1</option>
-                <option value="62">Quận 10</option>
-                <option value="63">Quận 11</option>
-                <option value="64">Quận 12</option>
-                <option value="54">Quận 2</option>
-                <option value="55">Quận 3</option>
-                <option value="56">Quận 4</option>
-                <option value="57">Quận 5</option>
-                <option value="58">Quận 6</option>
-                <option value="59">Quận 7</option>
-                <option value="60">Quận 8</option>
-                <option value="61">Quận 9</option>
-                <option value="69">Tân Bình</option>
-                <option value="70">Tân Phú</option>
-                <option value="71">Thủ Đức</option>
               </select>
             </div>
             <div class="select">
-              <select>
-                <option value="0">--Price--</option>
-                <option value="1">Thỏa thuận</option>
-                <option value="2">Dưới 1 triệu</option>
-                <option value="3">1 triệu - 2 triệu</option>
-                <option value="4">2 triệu - 3 triệu</option>
+              <select id="street">
+                <option value="">--Street--</option>
               </select>
             </div>
             <div class="select">
               <select>
                 <option value="0">Area</option>
                 <option value="1">Chưa xác định</option>
-                <!-- <option value="2"><15m2</option> -->
                 <option value="3">20 m2</option>
                 <option value="4">20 - 30 m2</option>
                 <option value="5">Trên 50 m2</option>
@@ -184,6 +157,8 @@
           </div>
         </div>
       </div>
+              
+            </form>
 
       <div class="post" id="post_parent"></div>
 
@@ -191,7 +166,6 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <script src="../js/filter.js"></script>
     <script src="../js/a.js"></script>
     <script>
       const logout = () => {
