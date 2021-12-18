@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>3sHome 😙🤣😂</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
       rel="stylesheet"
       href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
@@ -12,7 +12,8 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
-    <link rel="stylesheet" href="../css/home.css" />
+    <link rel="stylesheet" href="../css/admin.css" />
+    <title>Document</title>
   </head>
   <body>
     <div class="home">
@@ -93,12 +94,28 @@
                 </ul>
               </li>
             </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+              <li>
+                <a href="../html/home.html"
+                  ><span class="glyphicon glyphicon-log-out"></span> Logout</a
+                >
+              </li>
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+              <li>
+                <a href="../html/manage.html"
+                  ><span class="fa fa-id-card-o"></span> Manage</a
+                >
+              </li>
+            </ul>
           </div>
         </nav>
 
         <div class="search">
           <div class="box">
-            <!-- <h3>Quick Search</h3> -->
+            <h4>Quick Search</h4>
             <div class="bs-content">
               <div class="searchbar">
                 <div class="select">
@@ -163,6 +180,7 @@
                   <select>
                     <option value="0">Area</option>
                     <option value="1">Chưa xác định</option>
+                    <!-- <option value="2"><15m2</option> -->
                     <option value="3">20 m2</option>
                     <option value="4">20 - 30 m2</option>
                     <option value="5">Trên 50 m2</option>
@@ -174,12 +192,16 @@
                 </div>
               </div>
             </div>
+            <!-- <div class="bs-search">
+                  <button class="btn btn-warning btn-block" id="btnSearch"><i class="fa fa-search"></i>Search</button>
+              </div> -->
           </div>
 
           <div class="post" id="post_parent"></div>
         </div>
       </form>
     </div>
+
     <!-- <div class="image">
         <div class="row" style="display: flex">
           <div>

@@ -3,7 +3,7 @@ const a = [1, 2, 3, 4, 5, 6, 7, 100];
 $(document).ready(() => {
   $("#post_parent").html(``);
 
-  $.each(a, (index, value) => {
+  $.each(b, (index, value) => {
     var children = ` 
     <div class="left item" id="left1">
         <div class="img">
