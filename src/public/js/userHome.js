@@ -167,7 +167,7 @@ const loadHostels = async (hostelList) => {
         <div class="location">
           <span> 
           <i class="glyphicon glyphicon-map-marker"></i>
-          <b>${address}, ${street}, ${district}, ${city}/b>
+          <b>${address}, ${street}, ${district}, ${city}</b>
           </span>
       </div>
 

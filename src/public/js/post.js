@@ -1,7 +1,110 @@
 $(document).ready(async () => {
-  const res = await getData();
+  var res = await getData();
+  await search(
+    res.districtsHCM,
+    res.districtsHaNoi,
+    res.districtsDaNang,
+    res.streetHCM,
+    res.streetHaNoi,
+    res.streetDaNang
+  );
   await post();
 });
+
+const search = async (
+  districtsHCM,
+  districtsHaNoi,
+  districtsDaNang,
+  streetHCM,
+  streetHaNoi,
+  streetDaNang
+) => {
+  $("#city").change(async () => {
+    $("#district").html(`<option>--District--</option>`);
+    $("#street").html(`<option>--Street--</option>`);
+
+    if ($("#city").val() == "TP.HCM") {
+      $.each(districtsHCM.districts, (index, value) => {
+        const { name } = value;
+        var child = `
+            <option value="${name}">${name}</option>`;
+
+        $("#district").append(child);
+      });
+    } else {
+      if ($("#city").val() == "HaNoi") {
+        $.each(districtsHaNoi.districts, (index, value) => {
+          const { name } = value;
+          var child = `
+          <option value="${name}">${name}</option>`;
+
+          $("#district").append(child);
+        });
+      } else {
+        if ($("#city").val() == "DaNang") {
+          $.each(districtsDaNang.districts, (index, value) => {
+            const { name } = value;
+            var child = `
+                  <option value="${name}">${name}</option>`;
+
+            $("#district").append(child);
+          });
+        } else {
+          var child = ``;
+        }
+      }
+    }
+    $("#district").append(child);
+    if ($("#city").val() == "TP.HCM") {
+      $("#district").change(async () => {
+        $("#street").html(`<option>--Street--</option>`);
+        for (let i = 0; i < districtsHCM.districts.length; i++) {
+          if ($("#district").val() == districtsHCM.districts[i].name) {
+            $.each(streetHCM[i].street, (index, value) => {
+              const { name } = value;
+              var kid = `
+                <option value="${name}">${name}</option>`;
+
+              $("#street").append(kid);
+            });
+          }
+        }
+      });
+    }
+    if ($("#city").val() == "HaNoi") {
+      $("#district").change(async () => {
+        $("#street").html(`<option>--Street--</option>`);
+        for (let i = 0; i < districtsHaNoi.districts.length; i++) {
+          if ($("#district").val() == districtsHaNoi.districts[i].name) {
+            $.each(streetHaNoi[i].street, (index, value) => {
+              const { name } = value;
+              var kid = `
+                <option value="${name}">${name}</option>`;
+
+              $("#street").append(kid);
+            });
+          }
+        }
+      });
+    }
+    if ($("#city").val() == "DaNang") {
+      $("#district").change(async () => {
+        $("#street").html(`<option>--Street--</option>`);
+        for (let i = 0; i < districtsDaNang.districts.length; i++) {
+          if ($("#district").val() == districtsDaNang.districts[i].name) {
+            $.each(streetDaNang[i].street, (index, value) => {
+              const { name } = value;
+              var kid = `
+                <option value="${name}">${name}</option>`;
+
+              $("#street").append(kid);
+            });
+          }
+        }
+      });
+    }
+  });
+};
 
 const getData = async () => {
   var result = null;
