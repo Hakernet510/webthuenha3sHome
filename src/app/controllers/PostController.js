@@ -6,18 +6,21 @@ if (typeof localStorage === "undefined" || localStorage === null) {
 }
 
 const postController = async (req, res) => {
-  console.log("req là: ", req.body);
-
+  console.log("req là: 9", req.body);
+  const data = req.body;
+  console.log(data.name, data.price, data.address);
   // const resInput = await checkInput(req.body);
   // if (!resInput) return res.json({ message: "fail" });
 
   var user = localStorage.getItem('user');
+  const image = localStorage.getItem('image');
+  console.log("🚀 ~ file: PostController.js ~ line 17 ~ postController ~ image", image)
   // await insertDB(JSON.parse(user));
-
 
   res.json({
     message: "success",
-    user: JSON.parse(user)
+    user: JSON.parse(user),
+    image
   });
 };
 

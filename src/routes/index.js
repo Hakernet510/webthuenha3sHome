@@ -12,6 +12,7 @@ const deleteController = require('./delete')
 const updateController = require('./update')
 const switchController = require('./switch')
 const updateHostelController = require('./updateHostel')
+const loadDataController = require('./loadData')
 const multer = require('multer')
 
 function route(app) {
@@ -43,6 +44,8 @@ function route(app) {
     app.use('/switch', switchController)
 
     app.use("/updateHostel", updateHostelController)
+
+    app.use("/loadData", loadDataController)
 
 }
 

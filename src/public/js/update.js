@@ -2,6 +2,7 @@ $(document).ready(async () => {
   var hostelList = await getHostels();
   await console.log("🚀 ~ file: a.js ~ line 5 ~ $ ~ hostelList", hostelList);
   await loadData(hostelList);
+  await resUI();
 });
 
 const getHostels = async () => {
@@ -50,7 +51,7 @@ const loadData = async (hostelList) => {
 
       <div class="center">
         <h1>Postting</h1>
-        <form action="/updateHostel" id="formPost" method="post">
+        <form action="/updateHostel" id="formUpdate" method="post">
           <h2>Thông tin cơ bản</h2>
           <div class="form-group title field">
             <label for="usr">Title</label>
@@ -184,7 +185,7 @@ const loadData = async (hostelList) => {
 
           <!-- <br> -->
 
-          <input class="submit" type="submit" value="Post" />
+          <input class="submit" type="submit" value="Edit" />
 
           <!-- <div>
           <button class="register">
@@ -198,3 +199,28 @@ const loadData = async (hostelList) => {
     $("#post_parent").append(children);
   });
 };
+
+const resUI = async () => {
+  $("#formUpdate").submit((event) => {
+    event.preventDefault();
+
+    console.log(
+      "🚀 ~ file: Post.js ~ line 21 ~ $ ~ $(`#formUpdate`).serialize()",
+      $("#formUpdate").serialize()
+    );
+    $("#updateResponse").text("Waiting for post...");
+
+    $.post({
+      url: "updateHostel",
+      dataType: "json",
+      data: $("#formUpdate").serialize(),
+      success: (res) => {
+        console.log("🚀 ~ file: post.js ~ line 27 ~ $ ~ res", res);
+        $("#formUpdate").trigger("reset");
+        $("#updateResponse").text(res.message);
+        if (res.message !== "success") return alert("sửa thất bại");
+        window.location.href = "/admin"
+      },
+    });
+  });
+}

@@ -108,7 +108,7 @@
     </nav>
 
     <div class="search">
-            <form method="POST">
+            <form action="/filter" method="POST">
       <div class="box">
         <h4>Quick Search</h4>
         <div class="bs-content">
@@ -125,10 +125,9 @@
             <div class="select">
               <select id="city">
                 <option value="">--City--</option>
-                <option value="1">Hồ Chí Minh</option>
-                <option value="2">Hà Nội</option>
-                <option value="3">Đà Nẵng</option>
-                <option value="4">Nghệ An</option>
+                <option value="TP.HCM">Hồ Chí Minh</option>
+                <option value="HaNoi">Hà Nội</option>
+                <option value="DaNang">Đà Nẵng</option>
               </select>
             </div>
             <div class="select">
@@ -166,7 +165,7 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <script src="../js/a.js"></script>
+    <script src="../js/userHome.js"></script>
     <script>
       const logout = () => {
         localStorage.removeItem('user');

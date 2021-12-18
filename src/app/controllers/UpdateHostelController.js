@@ -9,7 +9,9 @@ const updateHostelController = async (req, res) => {
     console.log(req.body);
     console.log("🚀 ~ file: UpdateHostelController.js ~ line 10 ~ updateHostelController ~ req.body", req.body)
     updateHostel(req.body);
-    res.render('admin');
+    res.json({
+        message: "success"
+    })
 }
 
 const updateHostel = async (data) => {
