@@ -9,6 +9,7 @@
       href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
     />
     <link rel="stylesheet" href="../css/file.css" />
+    <link rel="stylesheet" href="../css/home.css" />
   </head>
   <body>
     <nav class="navbar">
@@ -98,7 +99,7 @@
             >
           </li>
           <li>
-            <a onclick="logout()" href="http://localhost:3000/logout"
+            <a onclick="logout()" href="http://localhost:3000/login"
               ><span class="glyphicon glyphicon-log-out"></span> logout</a
             >
           </li>
@@ -106,48 +107,70 @@
       </div>
     </nav>
 
-    <div class="container">
-      <div class="row" style="display: flex">
-        <div>
-          <img
-            src="../image/hcm.png"
-            alt="HoChiMinh"
-            style="width: 400px; height: 200px; margin-right: 15px"
-          />
-        </div>
-        <div>
-          <img
-            src="../image/danang.png"
-            alt="HoChiMinh"
-            style="
-              width: 400px;
-              height: 200px;
-              margin-left: 15px;
-              margin-right: 15px;
-            "
-          />
-        </div>
-        <div>
-          <img
-            src="../image/hanoi.png"
-            alt="HoChiMinh"
-            style="
-              width: 400px;
-              height: 200px;
-              margin-left: 15px;
-              margin-right: 15px;
-            "
-          />
+    <div class="search">
+            <form action="/filter" method="POST">
+      <div class="box">
+        <h4>Quick Search</h4>
+        <div class="bs-content">
+          <div class="searchbar">
+            <div class="select">
+              <select>
+                <option value="">--Information of room--</option>
+                <option value="1">Cho thuê phòng trọ</option>
+                <option value="11">Cho thuê căn hộ</option>
+                <option value="2">Cho thuê nhà nguyên căn</option>
+                <option value="3">Tìm người ở ghép</option>
+              </select>
+            </div>
+            <div class="select">
+              <select id="city">
+                <option value="">--City--</option>
+                <option value="TP.HCM">Hồ Chí Minh</option>
+                <option value="HaNoi">Hà Nội</option>
+                <option value="DaNang">Đà Nẵng</option>
+              </select>
+            </div>
+            <div class="select">
+              <select id="district">
+                <option value="">--District--</option>
+              </select>
+            </div>
+            <div class="select">
+              <select id="street">
+                <option value="">--Street--</option>
+              </select>
+            </div>
+            <div class="select">
+              <select>
+                <option value="0">Area</option>
+                <option value="1">Chưa xác định</option>
+                <option value="3">20 m2</option>
+                <option value="4">20 - 30 m2</option>
+                <option value="5">Trên 50 m2</option>
+              </select>
+            </div>
+
+            <div class="submit">
+              <input type="submit" value="Search" style="width: 100%" />
+            </div>
+          </div>
         </div>
       </div>
+              
+            </form>
+
+      <div class="post" id="post_parent"></div>
+
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="../js/userHome.js"></script>
     <script>
       const logout = () => {
-        localStorage.removeItem("user");
-      };
+        localStorage.removeItem('user');
+      }
     </script>
+  </script>
   </body>
 </html>

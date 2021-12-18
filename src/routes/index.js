@@ -7,7 +7,13 @@ const landlordController = require('./landlord')
 const forgotController = require('./forgot')
 const detailController = require('./detail')
 const manageController = require('./manage')
-const logoutController = require('./logout')
+const adminController = require('./admin')
+const deleteController = require('./delete')
+const updateController = require('./update')
+const switchController = require('./switch')
+const updateHostelController = require('./updateHostel')
+const loadDataController = require('./loadData')
+const multer = require('multer')
 
 function route(app) {
 
@@ -29,7 +35,18 @@ function route(app) {
 
     app.use('/manage', manageController)
 
-    app.use('/logout', logoutController)
+    app.use('/admin', adminController)
+
+    app.use('/delete', deleteController)
+
+    app.use('/update', updateController)
+
+    app.use('/switch', switchController)
+
+    app.use("/updateHostel", updateHostelController)
+
+    app.use("/loadData", loadDataController)
+
 }
 
 module.exports = route;

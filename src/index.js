@@ -1,10 +1,9 @@
 const path = require('path');
 const express = require('express');
 const morgan = require('morgan');
-const handlebars = require('express-handlebars');
 const bodyParser = require("body-parser");
+const multer = require('multer');
 
-const { extname } = require('path');
 const app = express();
 const port = 3000;
 

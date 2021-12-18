@@ -39,10 +39,17 @@
     background: #f0f0f0;
     /* background: red; */
     border-radius: 10px;
+<<<<<<< HEAD
     margin: 0 auto;
   }
   
   .search h4 {
+=======
+    margin: auto auto;
+}
+
+.search h4{
+>>>>>>> 85195275a8ede9621463daba86012e5f7656d0b8
     height: 30px;
     /* text-align: center; */
     font-weight: 600;

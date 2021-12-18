@@ -8,7 +8,7 @@ $(document).ready(() => {
       );
       $("#detailResponse").text("Waiting for detail...");
   
-      $.detail({
+      $.post({
         url: "detail",
         dataType: "json",
         data: $("#formDetail").serialize(),
