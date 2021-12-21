@@ -108,45 +108,45 @@
     </nav>
 
     <div class="search">
- <form action="/filter" method="POST">
+ <form id="formSearch" action="/filter" method="POST">
       <div class="box">
         <h4>Quick Search</h4>
         <div class="bs-content">
           <div class="searchbar">
             <div class="select">
-              <select>
-                <option value="">--Information of room--</option>
-                <option value="1">Cho thuê phòng trọ</option>
-                <option value="11">Cho thuê căn hộ</option>
-                <option value="2">Cho thuê nhà nguyên căn</option>
-                <option value="3">Tìm người ở ghép</option>
-              </select>
-            </div>
-            <div class="select">
-              <select id="city">
+              <select id="city" name="city">
                 <option value="">--City--</option>
-                <option value="TP.HCM">Hồ Chí Minh</option>
-                <option value="HaNoi">Hà Nội</option>
-                <option value="DaNang">Đà Nẵng</option>
+                <option value="1">Hồ Chí Minh</option>
+                <option value="2">Hà Nội</option>
+                <option value="3">Đà Nẵng</option>
               </select>
             </div>
             <div class="select">
-              <select id="district">
+              <select id="district" name="district">
                 <option value="">--District--</option>
               </select>
             </div>
             <div class="select">
-              <select id="street">
+              <select id="street" name="street">
                 <option value="">--Street--</option>
               </select>
             </div>
             <div class="select">
-              <select>
-                <option value="0">Area</option>
-                <option value="1">Chưa xác định</option>
-                <option value="3">20 m2</option>
-                <option value="4">20 - 30 m2</option>
-                <option value="5">Trên 50 m2</option>
+              <select name="price">
+                <option value="">--Price--</option>
+                <option value="5">0-10</option>
+                <option value="15">10-20</option>
+                <option value="25">20-30</option>
+                <option value="35">30-40</option>
+              </select>
+            </div>
+            <div class="select">
+              <select name="area">
+                <option value="">--Area--</option>
+                <option value="25">0-50 m²</option>
+                <option value="75">50-100 m²</option>
+                <option value="125">100-150 m²</option>
+                <option value="175">150-200 m²</option>
               </select>
             </div>
 
