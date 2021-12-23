@@ -1,9 +1,29 @@
 $(document).ready(async () => {
   var hostelList = await getHostels();
-  await console.log("🚀 ~ file: a.js ~ line 5 ~ $ ~ hostelList", hostelList);
+  var res = await getData();
+  await search(res.city, res.district, res.streetA);
+  console.log("🚀 ~ file: a.js ~ line 5 ~ $ ~ hostelList", hostelList);
   await loadData(hostelList);
   await resUI();
 });
+
+const getData = async () => {
+  var result = null;
+
+  const getResult = (data) => {
+    result = data;
+  };
+
+  await $.get({
+    url: "loadData",
+    dataType: "json",
+    success: (res) => {
+      getResult(res);
+    },
+  });
+
+  return result;
+};
 
 const getHostels = async () => {
   var result = null;
@@ -28,117 +48,127 @@ const loadData = async (hostelList) => {
 
   $("#post_parent").html(``);
 
-  $.each(hostelList.hostels, (index, value) => {
+  $.each(hostelList.hostels, async (index, value) => {
     const {
       hostel_id,
       Title,
       Category,
       area,
       address,
-      city,
+      city_id,
       description,
       name,
       email,
       phone_number,
-      district,
+      district_id,
       price,
-      street,
+      street_id,
       url,
       priceUnit,
     } = value;
-
-    var children = `<div class="test">
-
-      <div class="center">
-        <h1>Postting</h1>
-        <form action="/updateHostel" id="formUpdate" method="post">
-          <h2>Thông tin cơ bản</h2>
-          <div class="form-group title field">
-            <label for="usr">Title</label>
-            <input
-              class="input"
-              type="text"
-              name="title"
-              class="form-control"
-              id="usr"
-              value="${Title}"
-              required
-            />
-          </div>
-
-          <div class="basic">
-            <div class="left">
-              <div class="cate">
-                <span>Category</span>
-                <select name="category">
+    var res = await getData();
+    const streetA = res.streetA;
+    const street = res.street;
+    const district = res.district;
+    const city = res.city;
+    for (let x = 0; x < city.city.length; x++) {
+      if (city_id == city.city[x].id) {
+        const Gcity = city.city[x].name;
+        for (let i = 0; i < district[x].districts.length; i++) {
+          if (district_id == district[x].districts[i].district_id) {
+            console.log(
+              "🚀 ~ file: update.js ~ line 78 ~ $.each ~ district[x].districts",
+              district[2].districts
+            );
+            const Gdistrict = district[x].districts[i].district_id;
+            for (let z = 0; z < streetA[x][i].street.length; z++) {
+              if (street_id == streetA[x][i].street[z].street_id) {
+                const Gstreet = streetA[x][i].street[z].street_id;
+                var resTitle = `<label for="usr">Title</label>
+                <input
+                  class="input"
+                  type="text"
+                  name="title"
+                  class="form-control"
+                  id="usr"
+                  value="${Title}"
+                  required
+                />`;
+                if (Category == "Room for rent") {
+                  var resCategory = `
+                <option value="${Category}">${Category}</option>
+                <option value="shared room">Tìm ở ghép</option>
+                `;
+                } else {
+                  var resCategory = `
                   <option value="${Category}">${Category}</option>
                   <option value="Room for rent">Cho thuê phòng trọ</option>
-                  <option value="shared room">Tìm ở ghép</option>
-                </select>
-              </div>
-              <br />
+                `;
+                }
+                if (city_id == 1) {
+                  var resCity = `
+                  <option value="">--City--</option>
+                  <option value="${city_id}" selected>${Gcity}</option>
+                  <option value="2">HaNoi</option>
+                  <option value="3">DaNang</option>`;
+                } else {
+                  if (city_id == 2) {
+                    var resCity = `
+                    <option value="">--City--</option>
+                    <option value="1">TP.HCM</option>
+                    <option value="${city_id}" selected>${Gcity}</option>
+                    <option value="3">DaNang</option>`;
+                  } else {
+                    var resCity = `
+                    <option value="">--City--</option>
+                    <option value="1">TP.HCM</option>
+                    <option value="2">HaNoi</option>
+                    <option value="${city_id}" selected>${Gcity}</option>`;
+                  }
+                }
+                $.each(district[x].districts, async (index, value) => {
+                  const { district_id, name } = value;
+                  if (district_id == Gdistrict) {
+                    var resDistrict = `<option value="${district_id}" selected>${name}</option>`;
+                  } else {
+                    var resDistrict = `<option value="${district_id}">${name}</option>`;
+                  }
+                  $("#district").append(resDistrict);
+                });
 
-              <div class="city">
-                <span>City</span>
-                <select name="city">
-                  <option value="${city}">${city}</option>
-                  <option value="HoChiMinh">HoChiMinh</option>
-                  <option value="HaNoi">HaNoi</option>
-                  <option value="DaNang">DaNang</option>
-                </select>
-              </div>
-              <br />
-
-              <div class="district">
-                <span>District</span>
-                <select name="district">
-                  <option value="${district}">${district}</option>
-                  <option value="">Quận 1</option>
-                  <option value="">Quận 2</option>
-                  <option value="">Quận 3</option>
-                  <option value="">Quận 4</option>
-                  <option value="">Quận 5</option>
-                  <option value="">Quận 6</option>
-                  <option value="">Quận 7</option>
-                  <option value="">Quận 8</option>
-                  <option value="">Quận 9</option>
-                  <option value="">Quận 10</option>
-                  <option value="">Quận 11</option>
-                  <option value="">Quận 12</option>
-                </select>
-              </div>
-
-              <div class="PriceUnit">
-                <span>Price Unit</span>
-                <select class="priceunit" name="priceUnit">
+                if (priceUnit == "Million/month") {
+                  var resPriceUnit = `
+                  <option value="${priceUnit}">${priceUnit}</option>
+                  <option value="Million/year">Triệu/năm</option>
+                `;
+                } else {
+                  var resPriceUnit = `
                   <option value="${priceUnit}">${priceUnit}</option>
                   <option value="">Triệu/tháng</option>
-                  <option value="">Triệu/năm</option>
-                </select>
-              </div>
-            </div>
+                `;
+                }
 
-            <div class="right height">
-              <div class="square">
+                var resArea = `
                 <span>Area</span>
-                <input type="text" name="area" value="${area}" required />
-                <!-- <span class="m2">m<sup>2</sup></span> -->
-              </div>
+                <input type="text" name="area" value="${area}" required />`;
 
-              <div class="address">
+                var resAddress = `
                 <span>Address</span>
                 <input type="text" name="address" value="${address}" required />
-                <input type="text" name="id" value="${hostel_id}" hidden />
-              </div>
+                <input type="text" name="id" value="${hostel_id}" hidden />`;
 
+                
+                $.each(streetA[x][i].street, async (index, value) => {
+                  const { street_id, name } = value;
+                  if (street_id == Gstreet) {
+                    var resStreet = `<option value="${street_id}" selected>${name}</option>`;
+                  } else {
+                    var resStreet = `<option value="${street_id}">${name}</option>`;
+                  }
+                  $("#street").append(resStreet);
+                });
 
-              <div class="street">
-                <span>Street</span>
-                <input type="text" name="street" value="${street}" required />
-              </div>
-
-              <br />
-              <div class="price">
+                var resPrice = `
                 <span>Price</span>
                 <input
                   type="text"
@@ -146,62 +176,68 @@ const loadData = async (hostelList) => {
                   placeholder="Ex: If 2.5 milions VNĐ then type 2.5"
                   value="${price}"
                   required
-                />
-              </div>
+                />`;
 
-              
-            </div>
-          </div>
+                var resDescription = `
+                <textarea
+                  placeholder="Nội Dung Mô Tả"
+                  class="form-control textarea"
+                  name="description"
+                  rows="5"
+                  id="comment">${description}</textarea>`;
 
-          <div class="advance">
-            <h2>Thông tin mô tả</h2>
-            <div class="group">
-              <!-- <label for="pwd">Nội Dung Mô Tả</label> -->
-              <textarea 
-                placeholder="Nội Dung Mô Tả"
-                class="form-control textarea"
-                name="description"
-                rows="5"
-                id="comment"
-              >${description}</textarea>
-            </div>
-          </div>
+                var resName = `
+                  <label class="contact_label" for="contact_name">Tên liên hệ</label>
+                  <input
+                    id="contact_name"
+                    type="text"
+                    name="name"
+                    value="${name}"
+                    required
+                  />`;
 
-          <div class="contact">
-            <h2>Thông tin liên hệ</h2>
-            <div>
-              <label class="contact_label" for="contact_name">Tên liên hệ</label>
-              <input id="contact_name" type="text" name="name" value="${name}" required />
-            </div>
-            <div>
-              <label class="contact_label" for="contact_phone">Điện thoại</label>
-              <input id="contact_phone" type="text" name="phonenumber" value="${phone_number}" required />
-            </div>
-            <div>
-              <label class="contact_label" for="contact_email">Email</label>
-              <input id="contact_email" type="text" name="email" value="${email}" required />
-            </div>
-          </div>
+                var resPhonenumber = `
+                  <label class="contact_label" for="contact_phone">Điện thoại</label>
+                  <input
+                    id="contact_phone"
+                    type="text"
+                    name="phonenumber"
+                    value="${phone_number}"
+                    required
+                  />`;
 
-          <!-- <br> -->
+                var resEmail = `
+                  <label class="contact_label" for="contact_email">Email</label>
+                  <input
+                    id="contact_email"
+                    type="text"
+                    name="email"
+                    value="${email}"
+                    required
+                  />`;
 
-          <input class="submit" type="submit" value="Edit" />
-
-          <!-- <div>
-          <button class="register">
-            <a href="../html/login.html">Post</a>
-          </button>
-        </div> -->
-        </form>
-      </div>
-    </div>`;
-
-    $("#post_parent").append(children);
+                $("#title").append(resTitle);
+                $("#category").append(resCategory);
+                $("#city").append(resCity);
+                $("#priceUnit").append(resPriceUnit);
+                $("#area").append(resArea);
+                $("#address").append(resAddress);
+                $("#price").append(resPrice);
+                $("#description").append(resDescription);
+                $("#name").append(resName);
+                $("#phonenumber").append(resPhonenumber);
+                $("#email").append(resEmail);
+              }
+            }
+          }
+        }
+      }
+    }
   });
 };
 
 const resUI = async () => {
-  $("#formUpdate").submit((event) => {
+  $("#formUpdate").on("submit", (event) => {
     event.preventDefault();
 
     console.log(
@@ -219,8 +255,43 @@ const resUI = async () => {
         $("#formUpdate").trigger("reset");
         $("#updateResponse").text(res.message);
         if (res.message !== "success") return alert("sửa thất bại");
-        window.location.href = "/admin"
+        window.location.href = "/admin";
       },
     });
   });
-}
+};
+
+const search = async (city, district, streetA) => {
+  $("#city").change(async () => {
+    console.log("change");
+    $("#district").html(`<option value="">--District--</option>`);
+    $("#street").html(`<option value="">--Street--</option>`);
+    for (let x = 0; x < city.city.length; x++) {
+      if ($("#city").val() == city.city[x].id) {
+        $.each(district[x].districts, (index, value) => {
+          const { district_id, name } = value;
+          var child = `
+              <option value="${district_id}">${name}</option>`;
+
+          $("#district").append(child);
+        });
+      }
+    }
+  });
+  $("#district").change(async () => {
+    $("#street").html(`<option value="">--Street--</option>`);
+    for (let i = 0; i < streetA.length; i++) {
+      for (let f = 0; f < streetA[i].length; f++) {
+        if ($("#district").val() == streetA[i][f].street[0].district_id) {
+          $.each(streetA[i][f].street, (index, value) => {
+            const { street_id, name } = value;
+            var kid = `
+                    <option value="${street_id}">${name}</option>`;
+
+            $("#street").append(kid);
+          });
+        }
+      }
+    }
+  });
+};

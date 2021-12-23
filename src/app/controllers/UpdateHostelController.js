@@ -18,7 +18,7 @@ const updateHostel = async (data) => {
     const id = localStorage.getItem("hostel_id");
     await db
     .promise()
-    .query(`UPDATE hostels SET Title = '${data.title}', Category = '${data.category}', description = '${data.description}', name = '${data.name}', email = '${data.email}', phone_number = '${data.phonenumber}', address = '${data.address}', street = '${data.street}', district = '${data.district}', city = '${data.city}', area = '${data.area}', price = '${data.price}', priceUnit = '${data.priceUnit}' WHERE hostel_id = ${id}`)
+    .query(`UPDATE hostels SET Title = '${data.title}', Category = '${data.category}', description = '${data.description}', name = '${data.name}', email = '${data.email}', phone_number = '${data.phonenumber}', address = '${data.address}', street_id = '${data.street}', district_id = '${data.district}', city_id = '${data.city}', area = '${data.area}', price = '${data.price}', priceUnit = '${data.priceUnit}' WHERE hostel_id = ${id}`)
 
 }
 

@@ -184,7 +184,7 @@ const post = async () => {
       contentType: false,
       success: (res) => {
         $("#formPost").trigger("reset");
-        // window.location.href = "/landlord";
+        window.location.href = "/landlord";
       },
     });
   });

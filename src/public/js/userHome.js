@@ -1,6 +1,5 @@
 $(document).ready(async () => {
   var res = await getData();
-  await console.log("🚀 ~ file: a.js ~ line 5 ~ $ ~ res", res);
   await loadHostels(res.hostels);
   await search(res.city, res.district, res.streetA);
 });
@@ -171,7 +170,8 @@ const loadHostels = async (hostelList) => {
     const city = res.city;
     for (let x = 0; x < city.city.length; x++) {
       if (city_id == city.city[x].id) {
-        const Gcity = city.city[0].name;
+        const Gcity = city.city[x].name;
+        console.log("🚀 ~ file: userHome.js ~ line 174 ~ $.each ~ city.city[0].name", city.city[x].name)
         for (let i = 0; i < district[x].districts.length; i++) {
           if (district_id == district[x].districts[i].district_id) {
             const Gdistrict = district[x].districts[i].name;
@@ -247,21 +247,3 @@ const loadHostels = async (hostelList) => {
     // console.log(300000, districtsHCM.districts[0]);
   });
 };
-
-const searchHostels = async () => {
-  var result = null;
-
-  const getResult = (data) => {
-    result = data;
-  };
-  await $.post({
-    url: "search",
-    dataType: "json",
-    data: $("#formSearch").serialize(),
-    success: (res) => {
-      getResult(res);
-    },
-  });
-
-  return result;
-}
