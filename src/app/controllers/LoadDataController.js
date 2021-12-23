@@ -1,8 +1,11 @@
+const { get } = require("express/lib/response");
 const { db } = require("../../connect");
 
 const loadDataController = async (req, res) => {
 
   const hostels = await getHostels();
+
+  const city = await getCity();
 
   const districtsHCM = await getDistrictHCM();
 
@@ -10,11 +13,21 @@ const loadDataController = async (req, res) => {
 
   const districtsDaNang = await getDistrictDaNang();
 
+  const street = await getAllStreet();
+
+  const streetA = [];
+
+  const district = [];
+
   const streetHCM = [];
 
   const streetHaNoi = [];
 
   const streetDaNang = [];
+
+  for (let i = 0; i < city.city.length; i++) {
+    district.push(await getDistrict(city.city[i].id));
+  }
 
   for (let i = 0; i < districtsHCM.districts.length; i++) {
     streetHCM.push(await getStreet(districtsHCM.districts[i].district_id));
@@ -28,15 +41,23 @@ const loadDataController = async (req, res) => {
     streetDaNang.push(await getStreet(districtsDaNang.districts[i].district_id));
   }
 
-  console.log(10000000, streetHCM[0].street);
-  console.log(10000000, streetHaNoi);
-  console.log(10000000, streetDaNang);
-
-  console.log(
-    "🚀 ~ file: LoadDataController.js ~ line 13 ~ loadDataController ~ data: ", districtsHCM.districts
-  );
+  for (let i = 0; i < city.city.length; i++) {
+    if (city.city[i].id == 1) {
+    streetA.push(streetHCM)
+    } else {
+      if (city.city[i].id == 2) {
+        streetA.push(streetHaNoi)
+      } else {
+        streetA.push(streetDaNang)
+      }
+    }
+  }
 
   res.json({
+    streetA,
+    street,
+    district,
+    city,
     hostels,
     districtsHCM,
     districtsHaNoi,
@@ -58,6 +79,58 @@ const getHostels = async () => {
     .then(([rows]) => getResult(rows));
 
   return { hostels: result };
+};
+
+const getCity = async () => {
+  var result = null;
+
+  const getResult = (rows) => (result = rows);
+
+  await db
+    .promise()
+    .query(`SELECT * FROM cities`)
+    .then(([rows]) => getResult(rows));
+
+  return { city: result };
+};
+
+const getDistrict = async (data) => {
+  var result = null;
+
+  const getResult = (rows) => (result = rows);
+
+  await db
+    .promise()
+    .query(`SELECT * FROM districts WHERE city_id=${data}`)
+    .then(([rows]) => getResult(rows));
+
+  return { districts: result };
+};
+
+const loadStreet = async (data) => {
+  var result = null;
+
+  const getResult = (rows) => (result = rows);
+
+  await db
+    .promise()
+    .query(`SELECT * FROM street WHERE district_id=${data}`)
+    .then(([rows]) => getResult(rows));
+
+  return { street: result };
+}
+
+const getAllStreet = async () => {
+  var result = null;
+
+  const getResult = (rows) => (result = rows);
+
+  await db
+    .promise()
+    .query(`SELECT * FROM street`)
+    .then(([rows]) => getResult(rows));
+
+  return { street: result };
 };
 
 const getDistrictHCM = async () => {

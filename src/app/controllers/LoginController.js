@@ -16,10 +16,6 @@ const loginController = async (req, res) => {
   const resDB = await checkDB(req.body);
   if (resDB.length === 0) return res.json({ message: "fail" });
 
-  const saveID = await getID(req.body);
-
-  const R = await getRole(req.body);
-
   localStorage.setItem("user", JSON.stringify(resDB));
 
   console.log("abc", localStorage.getItem("user"));
@@ -27,7 +23,6 @@ const loginController = async (req, res) => {
   res.json({
     message: "success",
     user: resDB,
-    role: R.role,
   });
 };
 
@@ -53,36 +48,6 @@ const checkDB = async (data) => {
     .then(([rows]) => getResult(rows));
 
   return result;
-};
-
-const getID = async (data) => {
-  var result = null;
-
-  const getResult = (rows) => (result = rows);
-
-  await db
-    .promise()
-    .query(
-      `SELECT id FROM landlords WHERE user_name= '${data.username}' AND password='${data.password}'`
-    )
-    .then(([rows]) => getResult(rows));
-
-  return result[0];
-};
-
-const getRole = async (data) => {
-  var result = null;
-
-  const getResult = (rows) => (result = rows);
-
-  await db
-    .promise()
-    .query(
-      `SELECT role FROM landlords WHERE user_name= '${data.username}' AND password='${data.password}'`
-    )
-    .then(([rows]) => getResult(rows));
-
-  return result[0];
 };
 
 module.exports = loginController;

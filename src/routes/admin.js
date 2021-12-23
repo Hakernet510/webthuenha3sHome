@@ -2,8 +2,7 @@ const express = require('express');
 const router = express.Router();
 
 const adminController = require('../app/controllers/AdminController');
-
-//regiterController.index
+const deleteController = require('../app/controllers/DeleteController')
 
 router.post('/', adminController);
 router.get('/', (req, res)=>{

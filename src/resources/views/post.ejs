@@ -16,10 +16,14 @@
 
   <body>
     <div class="test">
-
       <div class="center">
         <h1>Postting</h1>
-        <form action="/post" id="formPost" method="post" enctype="multipart/form-data">
+        <form
+          action="/post"
+          id="formPost"
+          method="post"
+          enctype="multipart/form-data"
+        >
           <h2>Thông tin cơ bản</h2>
           <div class="form-group title field">
             <label for="usr">Title</label>
@@ -46,37 +50,27 @@
 
               <div class="city">
                 <span>City</span>
-                <select name="city">
-                  <option value="HoChiMinh">HoChiMinh</option>
-                  <option value="HaNoi">HaNoi</option>
-                  <option value="DaNang">DaNang</option>
+                <select name="city" id="city">
+                  <option value="">--City--</option>
+                  <option value="1">Hồ Chí Minh</option>
+                  <option value="2">Hà Nội</option>
+                  <option value="3">Đà Nẵng</option>
                 </select>
               </div>
               <br />
 
               <div class="district">
                 <span>District</span>
-                <select name="district">
-                  <option value="">Quận 1</option>
-                  <option value="">Quận 2</option>
-                  <option value="">Quận 3</option>
-                  <option value="">Quận 4</option>
-                  <option value="">Quận 5</option>
-                  <option value="">Quận 6</option>
-                  <option value="">Quận 7</option>
-                  <option value="">Quận 8</option>
-                  <option value="">Quận 9</option>
-                  <option value="">Quận 10</option>
-                  <option value="">Quận 11</option>
-                  <option value="">Quận 12</option>
+                <select name="district" id="district">
+                  <option value="">--District--</option>
                 </select>
               </div>
 
               <div class="PriceUnit">
                 <span>Price Unit</span>
                 <select class="priceunit" name="priceUnit">
-                  <option value="">Triệu/tháng</option>
-                  <option value="">Triệu/năm</option>
+                  <option value="Million/month">Triệu/tháng</option>
+                  <option value="Million/year">Triệu/năm</option>
                 </select>
               </div>
             </div>
@@ -93,10 +87,12 @@
                 <input type="text" name="address" required />
               </div>
 
-
               <div class="street">
                 <span>Street</span>
-                <input type="text" name="street" required />
+                <select name="street" id="street">
+                  <option value="">--Street--</option>
+                </select>
+                <!-- <input type="text" required /> -->
               </div>
 
               <br />
@@ -109,8 +105,6 @@
                   required
                 />
               </div>
-
-              
             </div>
           </div>
 
@@ -118,7 +112,7 @@
             <h2>Thông tin mô tả</h2>
             <div class="group">
               <!-- <label for="pwd">Nội Dung Mô Tả</label> -->
-              <textarea 
+              <textarea
                 placeholder="Nội Dung Mô Tả"
                 class="form-control textarea"
                 name="description"
@@ -126,23 +120,45 @@
                 id="comment"
               ></textarea>
             </div>
-            
-                <input class="img-file" type="file" name="image" required>
+
+            <input class="img-file" type="file" name="image" required />
           </div>
 
           <div class="contact">
             <h2>Thông tin liên hệ</h2>
             <div>
-              <label class="contact_label" for="contact_name">Tên liên hệ</label>
-              <input id="contact_name" type="text" name="name" placeholder="VD: Nguyễn Văn A" required />
+              <label class="contact_label" for="contact_name"
+                >Tên liên hệ</label
+              >
+              <input
+                id="contact_name"
+                type="text"
+                name="name"
+                placeholder="VD: Nguyễn Văn A"
+                required
+              />
             </div>
             <div>
-              <label class="contact_label" for="contact_phone">Điện thoại</label>
-              <input id="contact_phone" type="text" name="phonenumber" placeholder="+84" required />
+              <label class="contact_label" for="contact_phone"
+                >Điện thoại</label
+              >
+              <input
+                id="contact_phone"
+                type="text"
+                name="phonenumber"
+                placeholder="+84"
+                required
+              />
             </div>
             <div>
               <label class="contact_label" for="contact_email">Email</label>
-              <input id="contact_email" type="text" name="email" placeholder="abc@example.com" required />
+              <input
+                id="contact_email"
+                type="text"
+                name="email"
+                placeholder="abc@example.com"
+                required
+              />
             </div>
           </div>
 
@@ -163,5 +179,3 @@
     <script src="../js/post.js"></script>
   </body>
 </html>
-
-

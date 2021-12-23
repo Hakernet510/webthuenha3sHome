@@ -277,9 +277,10 @@ form .field {
 .district select,
 .price input,
 .PriceUnit select,
-.street input{
+.street select{
   margin-top: 10px;
   padding-left: 10px;
+  color: #000;
 }
 
 .cate select:focus,
@@ -289,7 +290,7 @@ form .field {
 .district select:focus,
 .price input:focus,
 .PriceUnit select:focus,
-.street input:focus{
+.street select:focus{
   outline: none;
 }
 
