@@ -22,7 +22,7 @@ $(document).ready(() => {
           window.location.href = "/admin";
         } else {
           localStorage.setItem("user", res.user);
-          if (res.role == 0) {
+          if (res.user[0].role == 0) {
             window.location.href = "/renter";
           } else {
           window.location.href = "/landlord";

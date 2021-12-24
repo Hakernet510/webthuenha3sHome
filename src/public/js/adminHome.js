@@ -87,7 +87,7 @@ const loadHostels = async (hostelList) => {
     const city = res.city;
     for (let x = 0; x < city.city.length; x++) {
       if (city_id == city.city[x].id) {
-        const Gcity = city.city[0].name;
+        const Gcity = city.city[x].name;
         for (let i = 0; i < district[x].districts.length; i++) {
           if (district_id == district[x].districts[i].district_id) {
             const Gdistrict = district[x].districts[i].name;

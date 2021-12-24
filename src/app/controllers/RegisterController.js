@@ -3,6 +3,7 @@ const { db } = require("../../connect");
 
 const registerController = async (req, res) => {
   console.log("req là: ", req.body);
+  let i = 1;
 
   const resInput = await checkInput(req.body);
   if (!resInput) return res.json({ message: "fail" });
@@ -16,11 +17,31 @@ const registerController = async (req, res) => {
   const resP = await checkPass(req.body);
   if (!resP) return res.json({message: "Repeat wrong password"});
 
-  await insertDB(req.body);
+  while(true) {
+    const resUser = await checkUser (i);
+    if (resUser.length === 0) {
+      await insertDB(req.body, i);     
+      break; 
+    }
+    i++;
+  }
 
   res.json({
     message: "success",
   })
+};
+
+const checkUser = async (data) => {
+  var result = null;
+
+  const getResult = (rows) => (result = rows);
+
+  await db
+    .promise()
+    .query(`SELECT * FROM landlords WHERE id=${data}`)
+    .then(([rows]) => getResult(rows));
+
+  return result ;
 };
 
 const checkInput = async (data) => {
@@ -66,13 +87,13 @@ const checkInput = async (data) => {
     return result;
   };
 
-  const insertDB = async (data) => {
+  const insertDB = async (data, i) => {
     const result = data.username;
 
     await db
       .promise()
       .query(
-        `INSERT INTO Landlords (name,user_name,password, phone_number, role) VALUES ('${data.name}', '${data.username}', '${data.password}', '${data.phonenumber}', ${data.role});`
+        `INSERT INTO Landlords (id,name,user_name,password, phone_number, role) VALUES (${i}, '${data.name}', '${data.username}', '${data.password}', '${data.phonenumber}', ${data.role});`
       )
 
       return result;

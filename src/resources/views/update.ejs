@@ -1,21 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link
-    rel="stylesheet"
-    href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
-  />
-  <link rel="stylesheet" href="../css/home.css" />
-  <link rel="stylesheet" href="../css/post.css" />
-</head>
-<body>
-    <div class="post" id="post_parent"></div>
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="../css/home.css" />
+    <link rel="stylesheet" href="../css/post.css" />
+  </head>
+  <body>
+    <div class="test">
+      <div class="center">
+        <h1>Editing</h1>
+        <form action="/updateHostel" id="formUpdate" method="post">
+          <h2>Thông tin cơ bản</h2>
+          <div id="title" class="form-group title field"></div>
+
+          <div class="basic">
+            <div class="left">
+              <div class="cate">
+                <span>Category</span>
+                <select id="category" name="category"></select>
+              </div>
+              <br />
+
+              <div class="city">
+                <span>City</span>
+                <select id="city" name="city"></select>
+              </div>
+              <br />
+
+              <div class="district">
+                <span>District</span>
+                <select id="district" name="district"></select>
+              </div>
+
+              <div class="PriceUnit">
+                <span>Price Unit</span>
+                <select
+                  id="priceUnit"
+                  class="priceunit"
+                  name="priceUnit"
+                ></select>
+              </div>
+            </div>
+
+            <div class="right height">
+              <div id="area" class="square"></div>
+
+              <div id="address" class="address"></div>
+
+              <div class="street">
+                <span>Street</span>
+                <select name="street" id="street"></select>
+              </div>
+
+              <br />
+              <div id="price" class="price"></div>
+            </div>
+          </div>
+
+          <div class="advance">
+            <h2>Thông tin mô tả</h2>
+            <div id="description" class="group"></div>
+          </div>
+
+          <div class="contact">
+            <h2>Thông tin liên hệ</h2>
+            <div id="name"></div>
+            <div id="phonenumber"></div>
+            <div id="email"></div>
+          </div>
+
+          <input class="submit" type="submit" value="Edit" />
+        </form>
+      </div>
+    </div>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script src="../js/update.js"></script>
-</body>
+  </body>
 </html>
