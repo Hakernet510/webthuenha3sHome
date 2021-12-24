@@ -39,17 +39,10 @@
     background: #f0f0f0;
     /* background: red; */
     border-radius: 10px;
-<<<<<<< HEAD
     margin: 0 auto;
   }
   
   .search h4 {
-=======
-    margin: auto auto;
-}
-
-.search h4{
->>>>>>> 85195275a8ede9621463daba86012e5f7656d0b8
     height: 30px;
     /* text-align: center; */
     font-weight: 600;
@@ -67,19 +60,20 @@
   }
   
   .searchbar {
-    width: 1500px;
-    height: 100px;
+    width: 1600px;
+    height: 50px;
     border-radius: 20px;
-    padding-left: 5px;
-    padding-right: 5px;
+    /* padding-left: 5px;
+    padding-right: 5px; */
     display: flex;
     position: absolute;
     left: 50%;
+    margin-top: 10px;
     transform: translateX(-50%);
   }
   
   .searchbar select {
-    width: 230px;
+    width: 210px;
     height: 30px;
     margin-left: 20px;
     margin-right: 10px;
@@ -136,7 +130,7 @@
 
   .post {
     width: 1700px;
-    height: 740px;
+    height: 750px;
     /* background: white; */
   
     /* position: absolute;
@@ -272,4 +266,5 @@
     font-size: 14px;
     color: #000;
   }
+  
   
