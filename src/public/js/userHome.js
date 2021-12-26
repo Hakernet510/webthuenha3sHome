@@ -181,7 +181,8 @@ const loadHostels = async (hostelList) => {
             for (let f = 0; f < streetA[x][i].street.length; f++) {
               if (street_id == streetA[x][i].street[f].street_id) {
                 const Gstreet = streetA[x][i].street[f].name;
-                var children = ` <div class="left item" id="left1">
+                var children = ` 
+      <div class="left item" id="left1">
         <div class="img">
           <img class="picture" src="../image/${url}.png" alt="error">
         </div>

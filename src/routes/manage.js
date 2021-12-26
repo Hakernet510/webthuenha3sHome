@@ -5,7 +5,7 @@ const manageController = require('../app/controllers/ManageController');
 
 //regiterController.index
 
-router.post('/', manageController);
+router.get('/api', manageController);
 router.get('/', (req, res)=>{
     res.render('manage')
 });

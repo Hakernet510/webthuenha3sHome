@@ -252,10 +252,16 @@ const resUI = async () => {
       data: $("#formUpdate").serialize(),
       success: (res) => {
         console.log("🚀 ~ file: post.js ~ line 27 ~ $ ~ res", res);
+        const user = localStorage.getItem("user");
+        console.log("🚀 ~ file: update.js ~ line 256 ~ $ ~ user", user)
         $("#formUpdate").trigger("reset");
         $("#updateResponse").text(res.message);
         if (res.message !== "success") return alert("sửa thất bại");
-        window.location.href = "/admin";
+        if (user == 1) {
+          window.location.href = "/manage";
+        } else {
+          window.location.href = "/admin";
+        }
       },
     });
   });
