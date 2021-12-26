@@ -1,9 +1,9 @@
 const a = [1, 2, 3, 4, 5, 6, 7, 100];
 
 $(document).ready(() => {
-  $("#post_parent").html(``);
+  $("#admin_parent").html(``);
 
-  $.each(b, (index, value) => {
+  $.each(a, (index, value) => {
     var children = ` 
     <div class="left item" id="left1">
         <div class="img">
@@ -11,15 +11,26 @@ $(document).ready(() => {
         </div>
 
         <div class="text">
-            <h4 class="title">
+            <div class="title">
               <a title="Phòng trọ cao cấp quận Thủ Đức">Phòng trọ cao cấp quận Thủ Đức</a>
-            </h4>
+              
+              <div class="admin_button">
+                <div class="edit">
+                  <input type="submit" value="edit" />
+                </div>
+    
+                <div class="delete">
+                  <input type="submit" value="delete" />
+                </div>
+              </div>
+            </div>
 
             <div class="area">
               <span>
               <i class="fa fa-area-chart"></i>
                <b>50 m²</b>
               </span>          
+              
             </div>
 
             <div class="location">
@@ -56,10 +67,14 @@ $(document).ready(() => {
             <b>Email: nguyenvana@gmail.com</b>
           </span>
           </div>
+
+
+       
+
         </div>           
     </div>`;
 
-    $("#post_parent").append(children);
+    $("#admin_parent").append(children);
   });
 });
 
