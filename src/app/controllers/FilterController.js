@@ -1,5 +1,9 @@
 const { db } = require("../../connect");
 const app = require("express");
+if (typeof localStorage === "undefined" || localStorage === null) {
+  var LocalStorage = require("node-localstorage").LocalStorage;
+  localStorage = new LocalStorage("./scratch");
+}
 
 const filterController = async (req, res) => {
 
@@ -7,7 +11,6 @@ const filterController = async (req, res) => {
   console.log("🚀 ~ file: FilterController.js ~ line 7 ~ filterController ~ req.body", req.body)
   console.log("🚀 ~ file: FilterController.js ~ line 7 ~ filterController ~ hostels", hostels)
   console.log("🚀 ~ file: FilterController.js ~ line 7 ~ filterController ~ hostels", hostels.hostels.length)
-
   res.json({
     message: "success",
     hostels

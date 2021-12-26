@@ -21,7 +21,7 @@ $(document).ready(() => {
           localStorage.setItem("user", res.user[0].role);
           window.location.href = "/admin";
         } else {
-          localStorage.setItem("user", res.user);
+          localStorage.setItem("user", res.user[0].role);
           if (res.user[0].role == 0) {
             window.location.href = "/renter";
           } else {

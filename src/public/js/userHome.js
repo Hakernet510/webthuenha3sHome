@@ -2,6 +2,8 @@ $(document).ready(async () => {
   var res = await getData();
   await loadHostels(res.hostels);
   await search(res.city, res.district, res.streetA);
+  await filter();
+  await role();
 });
 
 const search = async (city, district, streetA) => {
@@ -21,23 +23,20 @@ const search = async (city, district, streetA) => {
     }
     $("#district").change(async () => {
       $("#street").html(`<option value="">--Street--</option>`);
-          for (let i = 0; i < streetA.length; i++) {
-            for (let f = 0; f < streetA[i].length; f++) {
-                if (
-                  $("#district").val() == streetA[i][f].street[0].district_id
-                ) {
-                  $.each(streetA[i][f].street, (index, value) => {
-                    const { street_id, name } = value;
-                    var kid = `
+      for (let i = 0; i < streetA.length; i++) {
+        for (let f = 0; f < streetA[i].length; f++) {
+          if ($("#district").val() == streetA[i][f].street[0].district_id) {
+            $.each(streetA[i][f].street, (index, value) => {
+              const { street_id, name } = value;
+              var kid = `
                     <option value="${street_id}">${name}</option>`;
 
-                    $("#street").append(kid);
-                  });
-                
-              }
-            }
+              $("#street").append(kid);
+            });
           }
-        });
+        }
+      }
+    });
 
     //   if ($("#city").val() == "1") {
     //     $.each(districtsHCM.districts, (index, value) => {
@@ -165,19 +164,23 @@ const loadHostels = async (hostelList) => {
       priceUnit,
     } = value;
     var res = await getData();
+    const streetA = res.streetA;
     const street = res.street;
     const district = res.district;
     const city = res.city;
     for (let x = 0; x < city.city.length; x++) {
       if (city_id == city.city[x].id) {
         const Gcity = city.city[x].name;
-        console.log("🚀 ~ file: userHome.js ~ line 174 ~ $.each ~ city.city[0].name", city.city[x].name)
+        console.log(
+          "🚀 ~ file: userHome.js ~ line 174 ~ $.each ~ city.city[0].name",
+          city.city[x].name
+        );
         for (let i = 0; i < district[x].districts.length; i++) {
           if (district_id == district[x].districts[i].district_id) {
             const Gdistrict = district[x].districts[i].name;
-            for (let f = 0; f < street.street.length; f++) {
-              if (street_id == street.street[f].street_id) {
-                const Gstreet = street.street[f].name;
+            for (let f = 0; f < streetA[x][i].street.length; f++) {
+              if (street_id == streetA[x][i].street[f].street_id) {
+                const Gstreet = streetA[x][i].street[f].name;
                 var children = ` <div class="left item" id="left1">
         <div class="img">
           <img class="picture" src="../image/${url}.png" alt="error">
@@ -246,4 +249,41 @@ const loadHostels = async (hostelList) => {
     // console.log(200000, streetHCM[0].street);
     // console.log(300000, districtsHCM.districts[0]);
   });
+};
+
+const filter = async () => {
+  $("#formSearch").submit((event) => {
+    event.preventDefault();
+
+    $.post({
+      url: "filter",
+      dataType: "json",
+      data: $("#formSearch").serialize(),
+      success: (res) => {
+        localStorage.setItem("search", JSON.stringify(res.hostels));
+        window.location.href = "/filter";
+      },
+    });
+  });
+};
+
+const role = async () => {
+  const user = localStorage.getItem("user");
+  if (user == 1) {
+    $("#post").ready(async () => {
+      var resPost = `
+      <a href="http://localhost:3000/post"
+        ><span class="glyphicon glyphicon-open"></span> post</a
+      >`;
+
+      $("#post").append(resPost);
+    });
+    $("#manage").ready(async () => {
+      var resManage = `
+    <a href="http://localhost:3000/manage"
+      ><span class="glyphicon glyphicon-open"></span> manage</a
+    >`;
+      $("#manage").append(resManage);
+    });
+  }
 };

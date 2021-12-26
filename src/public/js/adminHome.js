@@ -2,12 +2,14 @@ $(document).ready(async () => {
   var res = await getData();
   await loadHostels(res.hostels);
   await search(res.city, res.district, res.streetA);
+  await filter();
+  await deleteHostel();
 });
 
 const search = async (city, district, streetA) => {
   $("#city").change(async () => {
-    $("#district").html(`<option>--District--</option>`);
-    $("#street").html(`<option>--Street--</option>`);
+    $("#district").html(`<option value="">--District--</option>`);
+    $("#street").html(`<option value="">--Street--</option>`);
     for (let x = 0; x < city.city.length; x++) {
       if ($("#city").val() == city.city[x].id) {
         $.each(district[x].districts, (index, value) => {
@@ -20,24 +22,21 @@ const search = async (city, district, streetA) => {
       }
     }
     $("#district").change(async () => {
-      $("#street").html(`<option>--Street--</option>`);
-          for (let i = 0; i < streetA.length; i++) {
-            for (let f = 0; f < streetA[i].length; f++) {
-                if (
-                  $("#district").val() == streetA[i][f].street[0].district_id
-                ) {
-                  $.each(streetA[i][f].street, (index, value) => {
-                    const { street_id, name } = value;
-                    var kid = `
+      $("#street").html(`<option value="">--Street--</option>`);
+      for (let i = 0; i < streetA.length; i++) {
+        for (let f = 0; f < streetA[i].length; f++) {
+          if ($("#district").val() == streetA[i][f].street[0].district_id) {
+            $.each(streetA[i][f].street, (index, value) => {
+              const { street_id, name } = value;
+              var kid = `
                     <option value="${street_id}">${name}</option>`;
 
-                    $("#street").append(kid);
-                  });
-                
-              }
-            }
+              $("#street").append(kid);
+            });
           }
-        });
+        }
+      }
+    });
   });
 };
 
@@ -82,7 +81,7 @@ const loadHostels = async (hostelList) => {
       priceUnit,
     } = value;
     var res = await getData();
-    const street = res.street;
+    const streetA = res.streetA;
     const district = res.district;
     const city = res.city;
     for (let x = 0; x < city.city.length; x++) {
@@ -91,9 +90,9 @@ const loadHostels = async (hostelList) => {
         for (let i = 0; i < district[x].districts.length; i++) {
           if (district_id == district[x].districts[i].district_id) {
             const Gdistrict = district[x].districts[i].name;
-            for (let f = 0; f < street.street.length; f++) {
-              if (street_id == street.street[f].street_id) {
-                const Gstreet = street.street[f].name;
+            for (let f = 0; f < streetA[x][i].street.length; f++) {
+              if (street_id == streetA[x][i].street[f].street_id) {
+                const Gstreet = streetA[x][i].street[f].name;
                 var children = ` <div class="left item" id="left1">
         <div class="img">
           <img class="picture" src="../image/${url}.png" alt="error">
@@ -170,5 +169,37 @@ const loadHostels = async (hostelList) => {
     // console.log(100000, district[0].districts);
     // console.log(200000, streetHCM[0].street);
     // console.log(300000, districtsHCM.districts[0]);
+  });
+};
+
+const filter = async () => {
+  $("#formSearch").submit((event) => {
+    event.preventDefault();
+
+    $.post({
+      url: "filter",
+      dataType: "json",
+      data: $("#formSearch").serialize(),
+      success: (res) => {
+        localStorage.setItem("search", JSON.stringify(res.hostels));
+        window.location.href = "/filter";
+      },
+    });
+  });
+};
+
+const deleteHostel = async () => {
+  $("#post_parent").on("submit", "#formDelete",(event) => {
+    event.preventDefault();
+
+    $.post({
+      url: "delete",
+      dataType: "json",
+      data: $("#formDelete").serialize(),
+      success: (res) => {
+        console.log("🚀 ~ file: adminHome.js ~ line 204 ~ $ ~ res", res);
+        window.location.reload();
+      },
+    });
   });
 };
