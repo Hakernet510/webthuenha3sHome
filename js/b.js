@@ -14,15 +14,7 @@ $(document).ready(() => {
             <div class="title">
               <a title="Phòng trọ cao cấp quận Thủ Đức">Phòng trọ cao cấp quận Thủ Đức</a>
               
-              <div class="admin_button">
-                <div class="edit">
-                  <input type="submit" value="edit" />
-                </div>
-    
-                <div class="delete">
-                  <input type="submit" value="delete" />
-                </div>
-              </div>
+              
             </div>
 
             <div class="area">
