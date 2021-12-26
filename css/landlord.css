@@ -155,7 +155,7 @@
     /* background: #000; */
     border: 2px solid silver;
     display: inline-flex;
-    margin-bottom: 1em;
+    /* margin-bottom: 1em; */
   }
   
   .item {
@@ -170,7 +170,7 @@
     display: block;
     width: auto;
     height: 100%;
-    margin-left: 10px;
+    /* margin-left: 10px; */
   }
   
   .img .picture {
@@ -284,5 +284,27 @@
     font-size: 18px
     
   }
+
+
+    /* width */
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+  
+    /* Track */
+    ::-webkit-scrollbar-track {
+      background: #f1f1f1;
+    }
+  
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+      background: #888;
+    }
+  
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+      background: #555;
+    }
+  
 
  

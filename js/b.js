@@ -11,11 +11,11 @@ $(document).ready(() => {
         </div>
 
         <div class="text">
-            <div class="title">
+            <h4 class="title">
               <a title="Phòng trọ cao cấp quận Thủ Đức">Phòng trọ cao cấp quận Thủ Đức</a>
               
               
-            </div>
+            </h4>
 
             <div class="area">
               <span>

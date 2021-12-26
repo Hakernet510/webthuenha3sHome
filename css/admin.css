@@ -130,7 +130,7 @@
   .img.ratio-16-9:before {
     padding-top: 56.25%;
   } */
-
+  
   .post {
     width: 1700px;
     height: 750px;
@@ -192,7 +192,14 @@
     margin-left: 10px;
   }
   
-  
+  .title a {
+    /* margin: 0 0 0 10px;
+    height: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 18px */
+    text-decoration: none;
+  }
   
   .area {
     height: 30px;
@@ -273,14 +280,7 @@
     height: 50px;
   }
 
-  .title a {
-    margin: 0 0 0 10px;
-    height: 30px;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 18px
-    
-  }
+  
 
   .admin_button{
     width: 100px;
