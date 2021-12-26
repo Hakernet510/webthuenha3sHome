@@ -1,7 +1,7 @@
 const a = [1, 2, 3, 4, 5, 6, 7, 100];
 
 $(document).ready(() => {
-  $("#admin_parent").html(``);
+  $("#landlord_parent").html(``);
 
   $.each(a, (index, value) => {
     var children = ` 
@@ -13,16 +13,6 @@ $(document).ready(() => {
         <div class="text">
             <div class="title">
               <a title="Phòng trọ cao cấp quận Thủ Đức">Phòng trọ cao cấp quận Thủ Đức</a>
-              
-              <div class="admin_button">
-                <div class="edit">
-                  <input type="submit" value="edit" />
-                </div>
-    
-                <div class="delete">
-                  <input type="submit" value="delete" />
-                </div>
-              </div>
             </div>
 
             <div class="area">
@@ -67,10 +57,14 @@ $(document).ready(() => {
             <b>Email: nguyenvana@gmail.com</b>
           </span>
           </div>
+
+
+       
+
         </div>           
     </div>`;
 
-    $("#admin_parent").append(children);
+    $("#landlord_parent").append(children);
   });
 });
 

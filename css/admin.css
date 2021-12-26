@@ -1,3 +1,5 @@
+
+
 .admin {
     margin: 0;
     padding: 0;
@@ -7,7 +9,8 @@
     height: auto;
     overflow: hidden;
     position: relative;
-  }
+}
+
   
   /* .pic1 {
       width:400px; height:200px;
@@ -131,23 +134,15 @@
   .post {
     width: 1700px;
     height: 750px;
-    /* background: white; */
-  
-    /* position: absolute;
-      top: 15%;
-      left: 50%;
-      transform : translateX(-50%); */
+    /* background: black; */
     margin-top: 150px;
     margin: auto;
-  
     display: flex;
     flex-wrap: wrap;
-  
     border: 2px solid silver;
     border-radius: 10px;
-    /* border: 1px solid; */
-  
-    overflow: auto;
+    overflow-x: hidden;
+    /* overflow: auto; */
     scroll-behavior: smooth;
   }
   
@@ -156,11 +151,13 @@
     border: 2px solid silver;
     display: inline-flex;
     margin-bottom: 1em;
+
   }
   
   .item {
     width: 50%;
     height: 50%;
+    /* background: #000; */
     position: relative;
   }
   
@@ -287,9 +284,8 @@
 
   .admin_button{
     width: 100px;
-    height: 50px;
+    height: 30px;
     display: flex;
-    /* margin: -28px 5px 0 320px; */
     position: absolute;
     right: 4em;
     top: 8px;
