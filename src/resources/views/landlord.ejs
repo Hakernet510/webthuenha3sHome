@@ -93,10 +93,8 @@
           </li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
-          <li>
-            <a href="http://localhost:3000/post"
-              ><span class="glyphicon glyphicon-open"></span> post</a
-            >
+          <li id="manage"></li>
+          <li id="post">
           </li>
           <li>
             <a onclick="logout()" href="http://localhost:3000/login"
@@ -151,7 +149,7 @@
             </div>
 
             <div class="submit">
-              <input type="submit" value="Search" style="width: 100%" />
+              <input id="search" type="submit" value="Search" style="width: 100%" />
             </div>
           </div>
         </div>

@@ -1,1 +1,172 @@
-<h1 style="background-color: aqua;">Filter</h1>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="../css/file.css" />
+    <link rel="stylesheet" href="../css/home.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="http://localhost:3000/landlord"
+            >3S Home</a
+          >
+        </div>
+        <ul class="nav navbar-nav">
+          <li class="active">
+            <a href="http://localhost:3000/landlord">Home</a>
+          </li>
+          <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#"
+              >HoChiMinh <span class="caret"></span
+            ></a>
+            <ul class="dropdown-menu">
+              <li><a href="#">District 1</a></li>
+              <li><a href="#">District 2</a></li>
+              <li><a href="#">District 3</a></li>
+              <li><a href="#">District 4</a></li>
+              <li><a href="#">District 5</a></li>
+              <li><a href="#">District 6</a></li>
+              <li><a href="#">District 7</a></li>
+              <li><a href="#">District 8</a></li>
+              <li><a href="#">District 9</a></li>
+              <li><a href="#">District 10</a></li>
+              <li><a href="#">District 11</a></li>
+              <li><a href="#">District 12</a></li>
+              <li><a href="#">BinhTan District</a></li>
+              <li><a href="#">BinhThanh District</a></li>
+              <li><a href="#">GoVap District</a></li>
+              <li><a href="#">PhuNhuan District</a></li>
+              <li><a href="#">TanBinh District</a></li>
+              <li><a href="#">TanPhu District</a></li>
+              <li><a href="#">ThuDuc District</a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#"
+              >HaNoi <span class="caret"></span
+            ></a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Ba Dinh</a></li>
+              <li><a href="#">Bac Tu Liem</a></li>
+              <li><a href="#">Cau Giay</a></li>
+              <li><a href="#">Ha Dong</a></li>
+              <li><a href="#">Hai Ba Trung</a></li>
+              <li><a href="#">Hoan Kiem</a></li>
+              <li><a href="#">Hoang Mai</a></li>
+              <li><a href="#">Long Bien</a></li>
+              <li><a href="#">Nam Tu Lien</a></li>
+              <li><a href="#">Tay Ho </a></li>
+              <li><a href="#">Thanh Xuan</a></li>
+              <li><a href="#">Dong Da</a></li>
+              <li><a href="#">Chuong My</a></li>
+              <li><a href="#">Gia Lam</a></li>
+              <li><a href="#">Hoai Duc</a></li>
+              <li><a href="#">Me Linh</a></li>
+              <li><a href="#">Soc Son</a></li>
+              <li><a href="#">Thanh Tri</a></li>
+              <li><a href="#">Thuong Tin</a></li>
+              <li><a href="#">Dan Phuong</a></li>
+              <li><a href="#">Dong Anh</a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#"
+              >DaNang <span class="caret"></span
+            ></a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Lien Chieu</a></li>
+              <li><a href="#">Thanh Khe</a></li>
+              <li><a href="#">Hai Chau</a></li>
+              <li><a href="#">Son Tra</a></li>
+              <li><a href="#">Ngu Hanh Son</a></li>
+              <li><a href="#">Cam Le</a></li>
+              <li><a href="#">Hoa Vang</a></li>
+            </ul>
+          </li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li id="post">
+          </li>
+          <li>
+            <a onclick="logout()" href="http://localhost:3000/login"
+              ><span class="glyphicon glyphicon-log-out"></span> logout</a
+            >
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="search">
+ <form id="formSearch" action="/filter" method="POST">
+      <div class="box">
+        <h4>Quick Search</h4>
+        <div class="bs-content">
+          <div class="searchbar">
+            <div class="select">
+              <select id="city" name="city">
+                <option value="">--City--</option>
+                <option value="1">Hồ Chí Minh</option>
+                <option value="2">Hà Nội</option>
+                <option value="3">Đà Nẵng</option>
+              </select>
+            </div>
+            <div class="select">
+              <select id="district" name="district">
+                <option value="">--District--</option>
+              </select>
+            </div>
+            <div class="select">
+              <select id="street" name="street">
+                <option value="">--Street--</option>
+              </select>
+            </div>
+            <div class="select">
+              <select name="price">
+                <option value="">--Price--</option>
+                <option value="5">0-10</option>
+                <option value="15">10-20</option>
+                <option value="25">20-30</option>
+                <option value="35">30-40</option>
+              </select>
+            </div>
+            <div class="select">
+              <select name="area">
+                <option value="">--Area--</option>
+                <option value="25">0-50 m²</option>
+                <option value="75">50-100 m²</option>
+                <option value="125">100-150 m²</option>
+                <option value="175">150-200 m²</option>
+              </select>
+            </div>
+
+            <div class="submit">
+              <input id="search" type="submit" value="Search" style="width: 100%" />
+            </div>
+          </div>
+        </div>
+      </div>
+</form>
+
+      <div class="post" id="post_parent"></div>
+
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="../js/filter.js"></script>
+    <script>
+      const logout = () => {
+        localStorage.removeItem('user');
+      }
+    </script>
+  </script>
+  </body>
+</html>
