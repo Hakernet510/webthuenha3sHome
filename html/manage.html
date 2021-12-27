@@ -8,68 +8,170 @@
       rel="stylesheet"
       href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
     />
-    <link rel="stylesheet" href="../css/manage.css" />
+    <link rel="stylesheet" href="../css/admin_manage.css" />
   </head>
   <body class="new">
-        <nav class="navbar">
-            <div class="container-fluid">
-            <div class="navbar-header">
-                <a class="navbar-brand" href="#">3S Home</a>
-            </div>
-            <ul class="nav navbar-nav">
-                <li class="active"><a href="../html/home.html" style="font-size: 18pxf;">Home</a></li>         
-            </ul>
-            </div>
-        </nav>
+    <nav class="navbar">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">3S Home</a>
+        </div>
+        <ul class="nav navbar-nav">
+          <li class="active">
+            <a href="../html/home.html" style="font-size: 18px">Home</a>
+          </li>
+          <li class="dropdown"></li>
+        </ul>
+      </div>
+    </nav>
 
+    <div class="access_page">
+      <div class="page_content intro_page clearfix">
+        <ul class="nav nav-tabs tab_huongdan" role="tablist">
+          <li onclick="intoStart(event, 'Post');" class="active">
+            <a id="tab_post" href="http://127.0.0.1:5500/html/manage.html?tab=post"><i class="fa fa-list-alt"></i>Post</a>
+          </li>
+          <li onclick="intoStart(event, 'Account');" >
+            <a id="tab_account" href="http://127.0.0.1:5500/html/manage.html?tab=account"><i class="fa fa-user"></i>Account</a>
+          </li>
+          <li onclick="intoRank(event, 'c');" >
+            <a id="tab_unknown1" href="http://127.0.0.1:5500/html/manage.html?tab=unknown1"><i class="fa fa-list-alt"></i> unknown1</a>
+          </li>
+          <li onclick="intoQuiz(event, 'd');" >
+            <a id="tab_unknown2" href="http://127.0.0.1:5500/html/manage.html?tab=unknown2"><i class="fa fa-list-alt"></i> unknown2</a>
+          </li>
+          <!-- <li><a href="/Account_information.html"><i class="fa fa-user"></i>Account information</a></li> -->
+        </ul>
 
-        <div class="access_page">
-            <div class="page_content intro_page clearfix">
-                <ul class="nav nav-tabs tab_huongdan" role="tablist">
-        <li class="active"><a href=""><i class="fa fa-list-alt"></i> Postting</a></li>
-        <!-- <li><a href="/Account_information.html"><i class="fa fa-user"></i>Account information</a></li> -->
-    </ul>
-                <div class="tab-content">
-                    <h4>QUẢN LÝ TIN (0)</h4>
-                    <hr>
-                    <div class="dataTables_wrapper form-inline">
-                        <!-- <div class="row">
-                            <div class="col-sm-8 col-xs-12">
-                                <div class="dataTables_length">
-                                    <select id="ddlPostCate" name="CategoryId" class="form-control" onchange="search(this.value)">
-                                        <option value="">-- Loại tin đăng --</option>
-                                        <option value="1">Cho thuê phòng trọ</option>                                  
-                                        <option value="3">Tìm người ở ghép</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div> -->
-                        <div class="clearfix"><br></div>
-        <!-- <table class="table table-bordered table-striped table-vcenter dataTable no-footer table_banggia" role="grid" "="">
-            <thead>
-                <tr>
-                    <td>Tiêu đề</td>
-                    <td class="text-center">Trạng thái</td>
-                    <td class="text-center">Thao tác</td>
-                </tr>
-            </thead>
-                <tbody>
-                    <tr class="text-center">
-                        <td colspan="7">Bạn chưa có tin đăng nào</td>
-                    </tr>
-                </tbody>
-        </table> -->
-                        <!-- <div class="paging-container">
-                            <input name="__RequestVerificationToken" type="hidden" value="D4vicQX-s_DQkQiHRBBocG87qyZljCCEMEqTudt69RzhK4hzG2Ve3WnnuiYUms-pA95ABxIBRIYpCGy7q8tDHXrZNHJUhlc3eICgm2rs6sA1">
-                        </div> -->
+        <!-- <div class="scrollbar" id="style-1">
+            <div class="force-overflow"></div>
+        </div>  -->
+
+        <div id="post" >
+          <div class="tab_content">
+            <h4>Post Manage</h4>
+            <hr />
+            <div class="clearfix"><br /></div>
+          </div>
+        
+          <div class="post" id="body_post" style="overflow: hidden;">
+                <!-- loadPost.js -->
+                <div class="text">
+                  <div class="title">
+                    <a title="Phòng trọ cao cấp quận Thủ Đức">Phòng trọ cao cấp quận Thủ Đức</a>
+                    
+                    <div class="admin_button">
+                      <div class="edit">
+                        <input type="submit" value="edit" />
+                      </div>
+          
+                      <div class="delete">
+                        <input type="submit" value="delete" />
+                      </div>
                     </div>
+                  </div>
+      
+                  <div class="area">
+                    <span>
+                    <i class="fa fa-area-chart"></i>
+                     <b>50 m²</b>
+                    </span>          
+                    
+                  </div>
+      
+                  <div class="location">
+                    <span> 
+                    <i class="glyphicon glyphicon-map-marker"></i>
+                    <b>321, Bác Ái, Thủ Đức, Hồ Chí Minh</b>
+                    </span>
                 </div>
-            </div>
+      
+                <div class="money">
+                  <span>
+                  <i class="fa fa-money"></i>
+                  <b>3.8 Triệu/tháng</b>
+                  </span>
+                </div>
+      
+                <div class="rent">
+                  <span>
+                  <i class="fa fa-navicon"></i>
+                  <b>Cho thuê phòng trọ</b>
+                  </span>
+                </div>
+      
+                <div class="contact">
+                  <span>
+                  <i class="glyphicon glyphicon-user"></i> 
+                  <b>Liên hệ: Nguyễn Văn A - 0909666999</b>
+                  </span>
+                </div>
+      
+                <div class="mail">
+                <span>
+                  <i class="glyphicon glyphicon-envelope"></i> 
+                  <b>Email: nguyenvana@gmail.com</b>
+                </span>
+                </div>
+              </div>  
+          </div>
+        </div>
+      
+        <div id="account">
+          <div class="tab_content">
+            <h4>Account Manage</h4>
+            <hr />
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <td>Username</td>
+                  <td>Fullname</td>
+                  <td>Phonenumber</td>
+                  <td>Role</td>
+                </tr>
+              </thead>
+              <tbody id="body_account">
+                <!-- loadAccount.js -->
+              </tbody>
+            </table>
+          </div>
         </div>
 
+        <div id="unknown1">
+          <div class="tab_content">
+            <h4>unknown1</h4>
+            <hr />
+            <div class="dataTables">
+                       
 
+            </div>
+          
+            <div class="dataTables"></div>
+          </div>
+        </div>
 
+        <div id="unknown2">
+          <div class="tab_content">
+            <h4>unknown2</h4>
+            <hr />
+            <div class="dataTables">
+
+            </div>
+          
+            <div class="dataTables"></div>
+          </div>
+        </div>
+
+      </div>
+
+      </div>
+      
+    </div>
+    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="../js/handleTransform.js"></script>
+    <script src="../js/loadAccount.js"></script>
+    <script src="../js/loadPost.js"></script>
   </body>
 </html>
