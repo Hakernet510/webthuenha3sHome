@@ -1,3 +1,5 @@
+
+
 .admin {
     margin: 0;
     padding: 0;
@@ -7,7 +9,8 @@
     height: auto;
     overflow: hidden;
     position: relative;
-  }
+}
+
   
   /* .pic1 {
       width:400px; height:200px;
@@ -127,27 +130,19 @@
   .img.ratio-16-9:before {
     padding-top: 56.25%;
   } */
-
+  
   .post {
     width: 1700px;
     height: 750px;
-    /* background: white; */
-  
-    /* position: absolute;
-      top: 15%;
-      left: 50%;
-      transform : translateX(-50%); */
+    /* background: black; */
     margin-top: 150px;
     margin: auto;
-  
     display: flex;
     flex-wrap: wrap;
-  
     border: 2px solid silver;
     border-radius: 10px;
-    /* border: 1px solid; */
-  
-    overflow: auto;
+    overflow-x: hidden;
+    /* overflow: auto; */
     scroll-behavior: smooth;
   }
   
@@ -155,12 +150,14 @@
     /* background: #000; */
     border: 2px solid silver;
     display: inline-flex;
-    margin-bottom: 1em;
+    /* margin-bottom: 1em; */
+
   }
   
   .item {
     width: 50%;
     height: 50%;
+    /* background: #000; */
     position: relative;
   }
   
@@ -170,7 +167,7 @@
     display: block;
     width: auto;
     height: 100%;
-    margin-left: 10px;
+    /* margin-left: 10px; */
   }
   
   .img .picture {
@@ -195,7 +192,14 @@
     margin-left: 10px;
   }
   
-  
+  .title a {
+    /* margin: 0 0 0 10px;
+    height: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 18px */
+    text-decoration: none;
+  }
   
   .area {
     height: 30px;
@@ -276,20 +280,12 @@
     height: 50px;
   }
 
-  .title a {
-    margin: 0 0 0 10px;
-    height: 30px;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 18px
-    
-  }
+  
 
   .admin_button{
     width: 100px;
-    height: 50px;
+    height: 30px;
     display: flex;
-    /* margin: -28px 5px 0 320px; */
     position: absolute;
     right: 4em;
     top: 8px;
@@ -306,3 +302,24 @@
     width: 60px;
     height: 30px;
   }
+
+    /* width */
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+  
+    /* Track */
+    ::-webkit-scrollbar-track {
+      background: #f1f1f1;
+    }
+  
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+      background: #888;
+    }
+  
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+      background: #555;
+    }
+  
