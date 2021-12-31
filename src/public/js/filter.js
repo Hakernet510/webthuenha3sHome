@@ -60,14 +60,17 @@ const search = async (city, district, streetA) => {
 };
 
 const resHostels = async (data) => {
-    $("#post_parent").html(``);
+  $("#post_parent").html(``);
 
-    if (data.hostels.length == 0) {
-      var children = `<h1><p>NO RESULT</p></h1>`;
-      $("#post_parent").append(children);
-    } else {
-    console.log("🚀 ~ file: filter.js ~ line 97 ~ $.each ~ data.hostels.length", data.hostels.length)
-    $.each(data.hostels, async (index, value) =>{
+  if (data.hostels.length == 0) {
+    var children = `<h1><p>NO RESULT</p></h1>`;
+    $("#post_parent").append(children);
+  } else {
+    console.log(
+      "🚀 ~ file: filter.js ~ line 97 ~ $.each ~ data.hostels.length",
+      data.hostels.length
+    );
+    $.each(data.hostels, async (index, value) => {
       const {
         hostel_id,
         city_id,
@@ -98,7 +101,7 @@ const resHostels = async (data) => {
               for (let f = 0; f < streetA[x][i].street.length; f++) {
                 if (street_id == streetA[x][i].street[f].street_id) {
                   const Gstreet = streetA[x][i].street[f].name;
-                  if (role == 2) {                    
+                  if (role == 2) {
                     var children = ` <div class="left item" id="left1">
             <div class="img">
               <img class="picture" src="../image/${url}.png" alt="error">
@@ -162,7 +165,7 @@ const resHostels = async (data) => {
     
             </div>
     
-        </div>`;  
+        </div>`;
                   } else {
                     var children = ` <div class="left item" id="left1">
             <div class="img">
@@ -218,20 +221,19 @@ const resHostels = async (data) => {
     
             </div>
     
-        </div>`;  
+        </div>`;
                   }
-                    
+
                   $("#post_parent").append(children);
-                  
                 }
               }
             }
           }
         }
       }
-    })
+    });
   }
-}
+};
 
 const filter = async () => {
   $("#formSearch").submit((event) => {
@@ -247,18 +249,25 @@ const filter = async () => {
       },
     });
   });
-}
+};
 
 const role = async () => {
-  $("#post").ready(async () => {
-    const user = localStorage.getItem("user");
-    if (user == 1) {
+  const user = localStorage.getItem("user");
+  if (user == 1) {
+    $("#post").ready(async () => {
       var resPost = `
       <a href="http://localhost:3000/post"
         ><span class="glyphicon glyphicon-open"></span> post</a
-      >`
-    }
+      >`;
 
-    $("#post").append(resPost);
-  })
-}
+      $("#post").append(resPost);
+    });
+    $("#manage").ready(async () => {
+      var resManage = `
+  <a href="http://localhost:3000/manage"
+    ><span class="glyphicon glyphicon-open"></span> manage</a
+  >`;
+      $("#manage").append(resManage);
+    });
+  }
+};
